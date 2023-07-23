@@ -1,0 +1,22 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/about": "pages/about.html",
+  "/api/hello": "pages/api/hello.js",
+  "/blog-grid": "pages/blog-grid.html",
+  "/blog": "pages/blog.html",
+  "/faq": "pages/faq.html",
+  "/contacts": "pages/contacts.html",
+  "/gallery": "pages/gallery.html",
+  "/history": "pages/history.html",
+  "/index-2": "pages/index-2.html",
+  "/reservation": "pages/reservation.html",
+  "/": "pages/index.html",
+  "/menu-coffee": "pages/menu-coffee.html",
+  "/blog-single": "pages/blog-single.html",
+  "/menu-restaurant": "pages/menu-restaurant.html",
+  "/services": "pages/services.html",
+  "/team": "pages/team.html",
+  "/404": "pages/404.html"
+}
