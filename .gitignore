@@ -20,6 +20,11 @@ sketch
 .DS_Store
 
 dist
+.next
+out
+build
+.cache
+.nyc_output
 
 
 # End of https://www.toptal.com/developers/gitignore/api/react
