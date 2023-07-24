@@ -16,7 +16,10 @@ const Preloader = () => {
       >
         <div className="vertical-center">
           <div className="spinner-logo">
-            <h1>R</h1>
+            <h1>
+              Rhodes
+              <span className="text-primary">Coffee.co</span>
+            </h1>
             <h5>loading</h5>
             <div className="spinner-dot">
               <div className="spinner-line" />
