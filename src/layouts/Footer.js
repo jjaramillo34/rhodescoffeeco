@@ -1,56 +1,4 @@
 const Footer = () => {
-  const openHours = [
-    {
-      day: "Sunday - Thursday",
-      time: "08:00 am - 09:00pm",
-    },
-    {
-      day: "Only Friday",
-      time: "03:00 pm - 09:00pm",
-    },
-    {
-      day: "Saturday Close",
-      time: "",
-    },
-  ];
-
-  const contact = [
-    {
-      icon: "las la-map-marker",
-      title: "Location :",
-      text: "55 Main Street, New York",
-    },
-    {
-      icon: "las la-envelope-open-text",
-      title: "Email Address :",
-      text: "contact@rhodescoffee.co",
-    },
-    {
-      icon: "las la-phone",
-      title: "Phone Number :",
-      text: "+012 (345) 678 99",
-    },
-  ];
-
-  const gallery = [
-    { image: "images/grid_gal1.jpg" },
-    {
-      image: "images/grid_gal2.jpg",
-    },
-    {
-      image: "images/grid_gal3.jpg",
-    },
-    {
-      image: "images/grid_gal4.jpg",
-    },
-    {
-      image: "images/grid_gal5.jpg",
-    },
-    {
-      image: "images/grid_gal6.jpg",
-    },
-  ];
-
   return (
     <div className="kf-footer">
       <div className="container">
@@ -62,7 +10,7 @@ const Footer = () => {
               data-animate="active"
             >
               <a href="index.html">
-                <img src="images/logo.jpeg" alt="image" />
+                <img src="images/logo.png" alt="image" />
               </a>
             </div>
           </div>
@@ -74,12 +22,17 @@ const Footer = () => {
             >
               <h5>Working Hours</h5>
               <ul>
-                {openHours.map((item, index) => (
-                  <li key={index}>
-                    <em>{item.day}</em>
-                    <span>{item.time}</span>
-                  </li>
-                ))}
+                <li>
+                  Sunday - Thursday
+                  <em>08:00 am - 09:00pm</em>
+                </li>
+                <li>
+                  Only Friday
+                  <em>03:00 pm - 09:00pm</em>
+                </li>
+                <li>
+                  <strong>Saturday Close</strong>
+                </li>
               </ul>
             </div>
           </div>
@@ -99,7 +52,7 @@ const Footer = () => {
                 <li>
                   <i className="las la-envelope-open-text" />
                   <em>Email Address :</em>
-                  rhodescoffeedev@gmail.com
+                  kaffendev@gmail.com
                 </li>
                 <li>
                   <i className="las la-phone" />
@@ -176,7 +129,10 @@ const Footer = () => {
               className="kf-copyright element-anim-1 scroll-animate"
               data-animate="active"
             >
-              Copyright © 2022 rhodescoffee. All Rights Reserved.
+              <p>
+                Copyright ©{new Date().getFullYear()} RhodesCoffee.co. All
+                Rights Reserved.
+              </p>
             </div>
           </div>
         </div>

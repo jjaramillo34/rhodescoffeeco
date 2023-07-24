@@ -4,7 +4,7 @@
 
 .kf-footer {
   padding: 70px 0 0 0;
-  background: #090c0f;
+  background: #c4a484;
   h5 {
     margin: 0 0 20px 0;
   }
@@ -27,7 +27,7 @@
         }
       }
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         top: 13px;
@@ -106,23 +106,26 @@
 .kf-copyright {
   margin-top: 70px;
   padding: 30px 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-button.mfp-close:before, button.mfp-arrow:before {
+button.mfp-close:before,
+button.mfp-arrow:before {
   display: none;
 }
 
 @media screen and (max-width: 992px) {
-	.kf-f-hours {
-		margin-bottom: 50px;
-	}
+  .kf-f-hours {
+    margin-bottom: 50px;
+  }
 }
 
 @media screen and (max-width: 767px) {
-	.kf-footer .kf-logo, .kf-f-hours, .kf-f-contact {
-		margin-bottom: 50px;
-	}
+  .kf-footer .kf-logo,
+  .kf-f-hours,
+  .kf-f-contact {
+    margin-bottom: 50px;
+  }
   .kf-copyright {
     margin-top: 50px;
     font-size: 14px;
