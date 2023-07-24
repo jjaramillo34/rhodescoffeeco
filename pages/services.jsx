@@ -34,7 +34,7 @@ const Services = () => {
               className="kf-title element-anim-1 scroll-animate"
               data-animate="active"
             >
-              Kaffen Services One
+              rhodescoffee Services One
             </h3>
           </div>
           <div className="kf-services-items row">
@@ -103,7 +103,7 @@ const Services = () => {
               className="kf-title element-anim-1 scroll-animate"
               data-animate="active"
             >
-              Kaffen Services Two
+              rhodescoffee Services Two
             </h3>
           </div>
           <div className="kf-numbers-items-2 row">
@@ -236,7 +236,7 @@ const Services = () => {
               className="kf-title element-anim-1 scroll-animate"
               data-animate="active"
             >
-              Kaffen Services Three
+              rhodescoffee Services Three
             </h3>
           </div>
           <div className="kf-services-items-2 row">

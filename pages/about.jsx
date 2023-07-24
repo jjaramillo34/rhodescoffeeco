@@ -32,7 +32,7 @@ const About = () => {
                   className="kf-subtitle element-anim-1 scroll-animate"
                   data-animate="active"
                 >
-                  About Kaffen
+                  About rhodescoffee
                 </div>
                 <h3
                   className="kf-title element-anim-1 scroll-animate"

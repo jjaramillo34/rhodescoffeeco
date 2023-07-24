@@ -35,7 +35,7 @@ const MenuRestaurant = () => {
               className="kf-title element-anim-1 scroll-animate"
               data-animate="active"
             >
-              Kaffen Lunch Menu
+              rhodescoffee Lunch Menu
             </h3>
           </div>
           <div className="row">
@@ -246,7 +246,7 @@ const MenuRestaurant = () => {
               className="kf-title element-anim-1 scroll-animate"
               data-animate="active"
             >
-              Kaffen Dinner Menu
+              rhodescoffee Dinner Menu
             </h3>
           </div>
           <div className="row">

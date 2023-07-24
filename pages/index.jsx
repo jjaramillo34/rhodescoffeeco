@@ -143,7 +143,7 @@ const Index = () => {
               className="kf-title element-anim-1 scroll-animate"
               data-animate="active"
             >
-              Kaffen Popular Coffee Menu
+              rhodescoffee Popular Coffee Menu
             </h3>
           </div>
           <div

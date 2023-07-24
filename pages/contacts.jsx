@@ -63,12 +63,12 @@ const Contacts = () => {
                   <h5 className="name">Email Address</h5>
                   <ul>
                     <li>
-                      supportkaffen@gmail.com <br />
-                      www.kaffeninfo.net
+                      supportrhodescoffee@gmail.com <br />
+                      www.rhodescoffeeinfo.net
                     </li>
                     <li>
-                      supportkaffen@gmail.com <br />
-                      www.kaffeninfo.net
+                      supportrhodescoffee@gmail.com <br />
+                      www.rhodescoffeeinfo.net
                     </li>
                   </ul>
                 </div>

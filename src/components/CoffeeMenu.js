@@ -1,6 +1,73 @@
 import Isotope from "isotope-layout";
 import { useEffect, useRef, useState } from "react";
 
+const menu = [
+  {
+    id: 1,
+    name: "Americano",
+    subname: "2/3 espresso, 1/3 streamed milk",
+    price: "$4.9",
+    image: "images/menu1.jpg",
+    category: "hot-coffee",
+  },
+  {
+    id: 2,
+    name: "Espresso",
+    subname: "2/3 espresso, 1/3 streamed milk",
+    price: "$4.9",
+    image: "images/menu2.jpg",
+    category: "hot-coffee",
+  },
+  {
+    id: 3,
+    name: "Barista Pouring Syrup",
+    subname: "2/3 espresso, 1/3 streamed milk",
+    price: "$3.5",
+    image: "images/menu3.jpg",
+    category: "dessert",
+  },
+  {
+    id: 4,
+    name: "Late",
+    subname: "2/3 espresso, 1/3 streamed milk",
+    price: "$6.0",
+    image: "images/menu4.jpg",
+    category: "hot-coffee",
+  },
+  {
+    id: 5,
+    name: "Cappuccino Arabica",
+    subname: "2/3 espresso, 1/3 streamed milk",
+    price: "$2.8",
+    image: "images/menu5.jpg",
+    category: "dessert",
+  },
+  {
+    id: 6,
+    name: "Milk Cream",
+    subname: "2/3 espresso, 1/3 streamed milk",
+    price: "$7.5",
+    image: "images/menu6.jpg",
+    category: "dessert",
+  },
+  {
+    id: 7,
+    name: "Italian Burger",
+    subname: "Tomatoes, italian sausage, ground, onions, cheese",
+    price: "$12.8",
+    image: "images/ins_gal1.jpg",
+    category: "fast-food",
+  },
+  {
+    id: 8,
+    name: "Chicken Burger",
+    subname: "Ground chicken breast, mustard, paprika, onion",
+    price: "$17.5",
+    image: "images/ins_gal3.jpg",
+    category: "fast-food",
+  },
+];
+
 const CoffeeMenu = () => {
   // Isotope
   const isotope = useRef();
@@ -56,7 +123,7 @@ const CoffeeMenu = () => {
             className="kf-title element-anim-1 scroll-animate"
             data-animate="active"
           >
-            Kaffen Coffee Menu
+            rhodescoffee Coffee Menu
           </h3>
         </div>
         <div

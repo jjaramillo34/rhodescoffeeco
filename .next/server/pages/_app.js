@@ -46,6 +46,9 @@ const Preloader = ()=>{
                             src: "images/logo.png",
                             alt: "image"
                         }),
+                        /*#__PURE__*/ jsx_runtime.jsx("h5", {
+                            children: "loading"
+                        }),
                         /*#__PURE__*/ jsx_runtime.jsx("div", {
                             className: "spinner-dot",
                             children: /*#__PURE__*/ jsx_runtime.jsx("div", {

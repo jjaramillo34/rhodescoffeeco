@@ -13,7 +13,7 @@ const MainSlider = () => {
             />
             <div className="container">
               <div className="description align-left element-anim-1">
-                <div className="subtitles">Welcome to the Kaffen</div>
+                <div className="subtitles">Welcome to the rhodescoffee</div>
                 <h2 className="name text-anim-1" data-splitting="chars">
                   The London <br />
                   Coffee House
@@ -40,7 +40,7 @@ const MainSlider = () => {
             />
             <div className="container">
               <div className="description align-left element-anim-1">
-                <div className="subtitles">Welcome to the Kaffen</div>
+                <div className="subtitles">Welcome to the rhodescoffee</div>
                 <h2 className="name text-anim-1" data-splitting="chars">
                   The Paris
                   <br />
@@ -68,7 +68,7 @@ const MainSlider = () => {
             />
             <div className="container">
               <div className="description align-left">
-                <div className="subtitles">Welcome to the Kaffen</div>
+                <div className="subtitles">Welcome to the rhodescoffee</div>
                 <h2 className="name text-anim-1" data-splitting="chars">
                   Great Coffee <br />
                   Good Vibes

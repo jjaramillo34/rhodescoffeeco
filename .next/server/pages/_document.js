@@ -30,7 +30,7 @@ function Document() {
             /*#__PURE__*/ (0,jsx_runtime.jsxs)(next_document.Head, {
                 children: [
                     /*#__PURE__*/ jsx_runtime.jsx("title", {
-                        children: "Kaffen - Cafe & Restaurant React NextJS Template"
+                        children: "Rhodescoffee - Cafe & Restaurant"
                     }),
                     /*#__PURE__*/ jsx_runtime.jsx("meta", {
                         httpEquiv: "Content-Type",

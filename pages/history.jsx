@@ -83,7 +83,7 @@ const History = () => {
               className="kf-subtitle element-anim-1 scroll-animate"
               data-animate="active"
             >
-              Our Kaffen History
+              Our rhodescoffee History
             </div>
             <h3
               className="kf-title element-anim-1 scroll-animate"
@@ -105,7 +105,7 @@ const History = () => {
                     </div>
                     <div className="desc">
                       <div className="subname">
-                        Kaffen restaurant was founded
+                        rhodescoffee restaurant was founded
                       </div>
                       <h5 className="name">
                         Three Front-End Auditing Tools I Discovered Recently

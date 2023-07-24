@@ -2,7 +2,7 @@ import Layouts from "@/src/layouts/Layouts";
 import { Fragment, useState } from "react";
 import { Accordion } from "react-bootstrap";
 const faqsData = [
-  { id: 1, title: "How Much Customer Do You Like Kaffen?" },
+  { id: 1, title: "How Much Customer Do You Like rhodescoffee?" },
   { id: 2, title: "How Can I See Your Food Reviews?" },
   { id: 3, title: "How Can I Order Food In Online?" },
   { id: 4, title: "What Customer Say About Us?" },

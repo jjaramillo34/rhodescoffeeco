@@ -139,6 +139,57 @@ const stickyNav = ()=>{
 ;// CONCATENATED MODULE: ./src/layouts/Footer.js
 
 const Footer = ()=>{
+    const openHours = [
+        {
+            day: "Sunday - Thursday",
+            time: "08:00 am - 09:00pm"
+        },
+        {
+            day: "Only Friday",
+            time: "03:00 pm - 09:00pm"
+        },
+        {
+            day: "Saturday Close",
+            time: ""
+        }
+    ];
+    const contact = [
+        {
+            icon: "las la-map-marker",
+            title: "Location :",
+            text: "55 Main Street, New York"
+        },
+        {
+            icon: "las la-envelope-open-text",
+            title: "Email Address :",
+            text: "contact@rhodescoffee.co"
+        },
+        {
+            icon: "las la-phone",
+            title: "Phone Number :",
+            text: "+012 (345) 678 99"
+        }
+    ];
+    const gallery = [
+        {
+            image: "images/grid_gal1.jpg"
+        },
+        {
+            image: "images/grid_gal2.jpg"
+        },
+        {
+            image: "images/grid_gal3.jpg"
+        },
+        {
+            image: "images/grid_gal4.jpg"
+        },
+        {
+            image: "images/grid_gal5.jpg"
+        },
+        {
+            image: "images/grid_gal6.jpg"
+        }
+    ];
     return /*#__PURE__*/ jsx_runtime.jsx("div", {
         className: "kf-footer",
         children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
@@ -155,7 +206,7 @@ const Footer = ()=>{
                                 children: /*#__PURE__*/ jsx_runtime.jsx("a", {
                                     href: "index.html",
                                     children: /*#__PURE__*/ jsx_runtime.jsx("img", {
-                                        src: "images/logo.png",
+                                        src: "images/logo.jpeg",
                                         alt: "image"
                                     })
                                 })
@@ -170,30 +221,17 @@ const Footer = ()=>{
                                     /*#__PURE__*/ jsx_runtime.jsx("h5", {
                                         children: "Working Hours"
                                     }),
-                                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("ul", {
-                                        children: [
-                                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
+                                    /*#__PURE__*/ jsx_runtime.jsx("ul", {
+                                        children: openHours.map((item, index)=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
                                                 children: [
-                                                    "Sunday - Thursday",
                                                     /*#__PURE__*/ jsx_runtime.jsx("em", {
-                                                        children: "08:00 am - 09:00pm"
+                                                        children: item.day
+                                                    }),
+                                                    /*#__PURE__*/ jsx_runtime.jsx("span", {
+                                                        children: item.time
                                                     })
                                                 ]
-                                            }),
-                                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
-                                                children: [
-                                                    "Only Friday",
-                                                    /*#__PURE__*/ jsx_runtime.jsx("em", {
-                                                        children: "03:00 pm - 09:00pm"
-                                                    })
-                                                ]
-                                            }),
-                                            /*#__PURE__*/ jsx_runtime.jsx("li", {
-                                                children: /*#__PURE__*/ jsx_runtime.jsx("strong", {
-                                                    children: "Saturday Close"
-                                                })
-                                            })
-                                        ]
+                                            }, index))
                                     })
                                 ]
                             })
@@ -228,7 +266,7 @@ const Footer = ()=>{
                                                     /*#__PURE__*/ jsx_runtime.jsx("em", {
                                                         children: "Email Address :"
                                                     }),
-                                                    "kaffendev@gmail.com"
+                                                    "rhodescoffeedev@gmail.com"
                                                 ]
                                             }),
                                             /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
@@ -332,7 +370,7 @@ const Footer = ()=>{
                         children: /*#__PURE__*/ jsx_runtime.jsx("div", {
                             className: "kf-copyright element-anim-1 scroll-animate",
                             "data-animate": "active",
-                            children: "Copyright \xa9 2022 Kaffen. All Rights Reserved."
+                            children: "Copyright \xa9 2022 rhodescoffee. All Rights Reserved."
                         })
                     })
                 })

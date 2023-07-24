@@ -1,12 +1,13 @@
 {
-  "name": "kaffen-react",
+  "name": "rhodescoffee-react",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate": "next build"
   },
   "dependencies": {
     "isotope-layout": "^3.0.6",
