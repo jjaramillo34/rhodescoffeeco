@@ -16,7 +16,7 @@ const Preloader = () => {
       >
         <div className="vertical-center">
           <div className="spinner-logo">
-            <img src="images/logo.png" alt="image" />
+            <h1>R</h1>
             <h5>loading</h5>
             <div className="spinner-dot">
               <div className="spinner-line" />
