@@ -1,72 +1,8 @@
 import Isotope from "isotope-layout";
 import { useEffect, useRef, useState } from "react";
 
-const menu = [
-  {
-    id: 1,
-    name: "Americano",
-    subname: "2/3 espresso, 1/3 streamed milk",
-    price: "$4.9",
-    image: "images/menu1.jpg",
-    category: "hot-coffee",
-  },
-  {
-    id: 2,
-    name: "Espresso",
-    subname: "2/3 espresso, 1/3 streamed milk",
-    price: "$4.9",
-    image: "images/menu2.jpg",
-    category: "hot-coffee",
-  },
-  {
-    id: 3,
-    name: "Barista Pouring Syrup",
-    subname: "2/3 espresso, 1/3 streamed milk",
-    price: "$3.5",
-    image: "images/menu3.jpg",
-    category: "dessert",
-  },
-  {
-    id: 4,
-    name: "Late",
-    subname: "2/3 espresso, 1/3 streamed milk",
-    price: "$6.0",
-    image: "images/menu4.jpg",
-    category: "hot-coffee",
-  },
-  {
-    id: 5,
-    name: "Cappuccino Arabica",
-    subname: "2/3 espresso, 1/3 streamed milk",
-    price: "$2.8",
-    image: "images/menu5.jpg",
-    category: "dessert",
-  },
-  {
-    id: 6,
-    name: "Milk Cream",
-    subname: "2/3 espresso, 1/3 streamed milk",
-    price: "$7.5",
-    image: "images/menu6.jpg",
-    category: "dessert",
-  },
-  {
-    id: 7,
-    name: "Italian Burger",
-    subname: "Tomatoes, italian sausage, ground, onions, cheese",
-    price: "$12.8",
-    image: "images/ins_gal1.jpg",
-    category: "fast-food",
-  },
-  {
-    id: 8,
-    name: "Chicken Burger",
-    subname: "Ground chicken breast, mustard, paprika, onion",
-    price: "$17.5",
-    image: "images/ins_gal3.jpg",
-    category: "fast-food",
-  },
-];
+// import menu from "../data/menu";
+import menu from "./data/menu";
 
 const CoffeeMenu = () => {
   // Isotope
@@ -123,7 +59,7 @@ const CoffeeMenu = () => {
             className="kf-title element-anim-1 scroll-animate"
             data-animate="active"
           >
-            rhodescoffee Coffee Menu
+            RHODES COFFEE CO.
           </h3>
         </div>
         <div
@@ -139,171 +75,78 @@ const CoffeeMenu = () => {
           </a>
           <a
             className="c-pointer"
-            onClick={handleFilterKeyChange("fast-food")}
-            data-href="fast-food"
+            onClick={handleFilterKeyChange("espresso")}
+            data-href="espresso"
           >
-            Fast food
+            Espresso
           </a>
           <a
             className="c-pointer"
-            onClick={handleFilterKeyChange("hot-coffee")}
-            data-href="hot-coffee"
+            onClick={handleFilterKeyChange("hot")}
+            data-href="hot"
           >
-            Hot coffee
+            Hot
           </a>
           <a
             className="c-pointer"
-            onClick={handleFilterKeyChange("dessert")}
-            data-href="dessert"
+            onClick={handleFilterKeyChange("cold")}
+            data-href="cold"
           >
-            Dessert
+            Cold
+          </a>
+          <a
+            className="c-pointer"
+            onClick={handleFilterKeyChange("smoothies")}
+            data-href="smoothies"
+          >
+            Smoothies
+          </a>
+          <a
+            className="c-pointer"
+            onClick={handleFilterKeyChange("treats-eats")}
+            data-href="treats-eats"
+          >
+            Treats & Eats
           </a>
         </div>
+
         <div
           className="kf-menu-items"
           style={{ backgroundImage: "url(images/menu_logo.png)" }}
         >
           <div className="row all-menu-items">
-            <div className="kf-menu-item-col col-xs-12 col-sm-12 col-md-12 col-lg-6 all hot-coffee">
+            {menu.map((item, index) => (
               <div
-                className="kf-menu-item element-anim-1 scroll-animate"
-                data-animate="active"
+                key={index}
+                className={`kf-menu-item-col col-xs-12 col-sm-12 col-md-12 col-lg-6 all ${item.category}`}
               >
-                <div className="image kf-image-hover">
-                  <a href="images/menu1.jpg" className="has-popup-image">
-                    <img src="images/menu1.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Americano</h5>
-                  <div className="subname">2/3 espresso, 1/3 streamed milk</div>
-                  <div className="price">$4.9</div>
-                </div>
-              </div>
-            </div>
-            <div className="kf-menu-item-col col-xs-12 col-sm-12 col-md-12 col-lg-6 all hot-coffee">
-              <div
-                className="kf-menu-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/menu2.jpg" className="has-popup-image">
-                    <img src="images/menu2.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Espresso</h5>
-                  <div className="subname">2/3 espresso, 1/3 streamed milk</div>
-                  <div className="price">$4.9</div>
-                </div>
-              </div>
-            </div>
-            <div className="kf-menu-item-col col-xs-12 col-sm-12 col-md-12 col-lg-6 all dessert">
-              <div
-                className="kf-menu-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/menu3.jpg" className="has-popup-image">
-                    <img src="images/menu3.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Barista Pouring Syrup</h5>
-                  <div className="subname">2/3 espresso, 1/3 streamed milk</div>
-                  <div className="price">$3.5</div>
-                </div>
-              </div>
-            </div>
-            <div className="kf-menu-item-col col-xs-12 col-sm-12 col-md-12 col-lg-6 all hot-coffee">
-              <div
-                className="kf-menu-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/menu4.jpg" className="has-popup-image">
-                    <img src="images/menu4.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Late</h5>
-                  <div className="subname">2/3 espresso, 1/3 streamed milk</div>
-                  <div className="price">$6.0</div>
-                </div>
-              </div>
-            </div>
-            <div className="kf-menu-item-col col-xs-12 col-sm-12 col-md-12 col-lg-6 all dessert">
-              <div
-                className="kf-menu-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/menu5.jpg" className="has-popup-image">
-                    <img src="images/menu5.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Cappuccino Arabica</h5>
-                  <div className="subname">2/3 espresso, 1/3 streamed milk</div>
-                  <div className="price">$2.8</div>
-                </div>
-              </div>
-            </div>
-            <div className="kf-menu-item-col col-xs-12 col-sm-12 col-md-12 col-lg-6 all dessert">
-              <div
-                className="kf-menu-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/menu6.jpg" className="has-popup-image">
-                    <img src="images/menu6.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Milk Cream</h5>
-                  <div className="subname">2/3 espresso, 1/3 streamed milk</div>
-                  <div className="price">$7.5</div>
-                </div>
-              </div>
-            </div>
-            <div className="kf-menu-item-col col-xs-12 col-sm-12 col-md-12 col-lg-6 all fast-food">
-              <div
-                className="kf-menu-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/ins_gal1.jpg" className="has-popup-image">
-                    <img src="images/ins_gal1.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Italian Burger</h5>
-                  <div className="subname">
-                    Tomatoes, italian sausage, ground, onions, cheese
+                <div
+                  className="kf-menu-item element-anim-1 scroll-animate"
+                  data-animate="active"
+                >
+                  <div className="image kf-image-hover">
+                    <a href="images/menu1.jpg" className="has-popup-image">
+                      <img src={item.image} alt="image" />
+                    </a>
                   </div>
-                  <div className="price">$12.8</div>
-                </div>
-              </div>
-            </div>
-            <div className="kf-menu-item-col col-xs-12 col-sm-12 col-md-12 col-lg-6 all fast-food">
-              <div
-                className="kf-menu-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/ins_gal3.jpg" className="has-popup-image">
-                    <img src="images/ins_gal3.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Chicken Burger</h5>
-                  <div className="subname">
-                    Ground chicken breast, mustard, paprika, onion
+                  <div className="desc">
+                    <h5 className="name">{item.name}</h5>
+                    <div className="subname">{item.subname}</div>
+                    <div className="size">{item.size}</div>
+                    <div
+                      className="price"
+                      style={{
+                        fontFamily: "Caveat",
+                        fontSize: "1.2rem",
+                        fontWeight: "bolder",
+                      }}
+                    >
+                      {item.price}
+                    </div>
                   </div>
-                  <div className="price">$17.5</div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -311,3 +154,21 @@ const CoffeeMenu = () => {
   );
 };
 export default CoffeeMenu;
+
+//<div className="kf-menu-item-col col-xs-12 col-sm-12 col-md-12 col-lg-6 all hot-coffee">
+//  <div
+//    className="kf-menu-item element-anim-1 scroll-animate"
+//    data-animate="active"
+//  >
+//    <div className="image kf-image-hover">
+//      <a href="images/menu1.jpg" className="has-popup-image">
+//        <img src="images/menu1.jpg" alt="image" />
+//      </a>
+//    </div>
+//    <div className="desc">
+//      <h5 className="name">Americano</h5>
+//      <div className="subname">2/3 espresso, 1/3 streamed milk</div>
+//      <div className="price">$4.9</div>
+//    </div>
+//  </div>
+//</div>;

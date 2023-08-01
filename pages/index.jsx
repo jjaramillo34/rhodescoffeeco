@@ -5,6 +5,12 @@ import { sliderProps } from "@/src/sliderProps";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+// import menu from "@/src/menu";
+import menu from "@/src/components/data/menu";
+
+// slice the array to get only 6 random items
+const slice6 = menu.slice(0, 6);
+
 const Index = () => {
   return (
     <Layouts>
@@ -19,6 +25,13 @@ const Index = () => {
                 <div
                   className="kf-subtitle element-anim-1 scroll-animate"
                   data-animate="active"
+                  style={{
+                    color: "#fff",
+                    textShadow: "0 0 10px rgba(0,0,0,0.5)",
+                    textTransform: "uppercase",
+                    fontWeight: "bold",
+                    fontSize: "2.5rem",
+                  }}
                 >
                   About Us
                 </div>
@@ -27,7 +40,7 @@ const Index = () => {
                   data-animate="active"
                 >
                   Organic &amp; Fresh Coffee <br />
-                  Provider Center
+                  at Rhodes Coffee Co.
                 </h3>
               </div>
               <div
@@ -35,22 +48,24 @@ const Index = () => {
                 data-animate="active"
               >
                 <p>
-                  Sed ut perspiciatis unde omnis iste natus error voluptate
-                  accusantium doloremque laudantium, totam rem aperiam eaque
-                  ipsa quae abillo inventore veritatis et quasi architecto
-                  beatae vitae dicta sunt explicabo. Nemo enim ipsluptatem quia
-                  voluptas sit aspernatur aut odit aut fugit sed quia
-                  consequuntur magni dolores eos qui ratione
+                  "Inspired by the road [Rhode] - the unexpected places life
+                  takes us, the people we meet, and ultimately - the place we
+                  call home - Rhodes Coffee Co. is an homage to our roots.
+                  Rooted in the belief that life is best lived authentically and
+                  organically - and as close to nature as possible. Rhodes
+                  Coffee Co. strives to be a catalyst for positive change with
+                  thoughtfully sourced organic coffee & ingredients + small
+                  batch, artisanal products at an affordable price."
                 </p>
               </div>
               <div
                 className="kf-about-quote element-anim-1 scroll-animate"
                 data-animate="active"
               >
-                <img src="images/quote_img.png" alt="image" />
+                <img src="images/quote_img1.jpg" alt="image" />
                 <div>
-                  Quis autem vel eum iure reprehenderit in ealuptate velit esse
-                  molestiae
+                  Rooted in authenticity, brewed for change - Rhodes Coffee Co.
+                  embraces life's unexpected roads.
                 </div>
               </div>
             </div>
@@ -59,7 +74,7 @@ const Index = () => {
                 className="kf-about-image element-anim-1 scroll-animate"
                 data-animate="active"
               >
-                <img src="images/about_img.png" alt="image" />
+                <img src="images/about_img1.png" alt="image" />
               </div>
             </div>
           </div>
@@ -142,8 +157,15 @@ const Index = () => {
             <h3
               className="kf-title element-anim-1 scroll-animate"
               data-animate="active"
+              style={{
+                color: "#fff",
+                textShadow: "0 0 10px rgba(0,0,0,0.5)",
+                textTransform: "uppercase",
+                fontWeight: "bold",
+                fontSize: "2.5rem",
+              }}
             >
-              rhodescoffee Popular Coffee Menu
+              RhodesCoffee Popular Coffee Menu
             </h3>
           </div>
           <div
@@ -151,120 +173,29 @@ const Index = () => {
             style={{ backgroundImage: "url(images/menu_logo.png)" }}
           >
             <div className="row">
-              <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+              {slice6.map((item, index) => (
                 <div
-                  className="kf-menu-item element-anim-1 scroll-animate"
-                  data-animate="active"
+                  className="col-xs-12 col-sm-12 col-md-12 col-lg-6"
+                  key={index}
                 >
-                  <div className="image kf-image-hover">
-                    <a href="images/menu1.jpg" className="has-popup-image">
-                      <img src="images/menu1.jpg" alt="image" />
-                    </a>
-                  </div>
-                  <div className="desc">
-                    <h5 className="name">Americano Coffee</h5>
-                    <div className="subname">
-                      2/3 espresso, 1/3 streamed milk
+                  <div
+                    className="kf-menu-item element-anim-1 scroll-animate"
+                    data-animate="active"
+                  >
+                    <div className="image kf-image-hover">
+                      <a href="images/menu1.jpg" className="has-popup-image">
+                        <img src={item.image} alt="image" />
+                      </a>
                     </div>
-                    <div className="price">$4.9</div>
+                    <div className="desc">
+                      <h5 className="name">{item.name}</h5>
+                      <div className="subname">{item.subname}</div>
+                      <div className="size">{item.size}</div>
+                      <div className="price">{item.price}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                <div
-                  className="kf-menu-item element-anim-1 scroll-animate"
-                  data-animate="active"
-                >
-                  <div className="image kf-image-hover">
-                    <a href="images/menu2.jpg" className="has-popup-image">
-                      <img src="images/menu2.jpg" alt="image" />
-                    </a>
-                  </div>
-                  <div className="desc">
-                    <h5 className="name">Espresso Coffee</h5>
-                    <div className="subname">
-                      2/3 espresso, 1/3 streamed milk
-                    </div>
-                    <div className="price">$4.9</div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                <div
-                  className="kf-menu-item element-anim-1 scroll-animate"
-                  data-animate="active"
-                >
-                  <div className="image kf-image-hover">
-                    <a href="images/menu3.jpg" className="has-popup-image">
-                      <img src="images/menu3.jpg" alt="image" />
-                    </a>
-                  </div>
-                  <div className="desc">
-                    <h5 className="name">Barista Pouring Syrup</h5>
-                    <div className="subname">
-                      2/3 espresso, 1/3 streamed milk
-                    </div>
-                    <div className="price">$3.5</div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                <div
-                  className="kf-menu-item element-anim-1 scroll-animate"
-                  data-animate="active"
-                >
-                  <div className="image kf-image-hover">
-                    <a href="images/menu4.jpg" className="has-popup-image">
-                      <img src="images/menu4.jpg" alt="image" />
-                    </a>
-                  </div>
-                  <div className="desc">
-                    <h5 className="name">Cold - Coffee</h5>
-                    <div className="subname">
-                      2/3 espresso, 1/3 streamed milk
-                    </div>
-                    <div className="price">$6.0</div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                <div
-                  className="kf-menu-item element-anim-1 scroll-animate"
-                  data-animate="active"
-                >
-                  <div className="image kf-image-hover">
-                    <a href="images/menu5.jpg" className="has-popup-image">
-                      <img src="images/menu5.jpg" alt="image" />
-                    </a>
-                  </div>
-                  <div className="desc">
-                    <h5 className="name">Cappuccino Arabica</h5>
-                    <div className="subname">
-                      2/3 espresso, 1/3 streamed milk
-                    </div>
-                    <div className="price">$2.8</div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                <div
-                  className="kf-menu-item element-anim-1 scroll-animate"
-                  data-animate="active"
-                >
-                  <div className="image kf-image-hover">
-                    <a href="images/menu6.jpg" className="has-popup-image">
-                      <img src="images/menu6.jpg" alt="image" />
-                    </a>
-                  </div>
-                  <div className="desc">
-                    <h5 className="name">Milk Cream Coffee</h5>
-                    <div className="subname">
-                      2/3 espresso, 1/3 streamed milk
-                    </div>
-                    <div className="price">$7.5</div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
