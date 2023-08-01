@@ -6,10 +6,81 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // import menu from "@/src/menu";
-import menu from "@/src/components/data/menu";
+import items from "@/src/components/data/menu";
 
-// slice the array to get only 6 random items
-const slice6 = menu.slice(0, 6);
+const slice6 = items.slice(0, 6);
+
+const itemsCarousel = [
+  {
+    image: "images/grid_gal1.jpg",
+    name: "Black Coffee",
+  },
+  {
+    image: "images/grid_gal2.jpg",
+    name: "Latte",
+  },
+  {
+    image: "images/grid_gal3.jpg",
+    name: "Cappuccino",
+  },
+  {
+    image: "images/grid_gal4.jpg",
+    name: "Iced Coffee",
+  },
+  {
+    image: "images/grid_gal5.jpg",
+    name: "Espresso",
+  },
+  {
+    image: "images/grid_gal6.jpg",
+    name: "Mocha",
+  },
+  {
+    image: "images/grid_gal7.jpg",
+    name: "Macchiato",
+  },
+  {
+    image: "images/grid_gal8.jpg",
+    name: "Americano",
+  },
+  {
+    image: "images/grid_gal9.jpg",
+    name: "Flat White",
+  },
+  {
+    image: "images/grid_gal10.jpg",
+    name: "Affogato",
+  },
+];
+
+const reviews = [
+  {
+    image: "images/review1.jpg",
+    name: "Lily Johnson",
+    review:
+      "RhodesCoffee Co. is a delightful journey of flavors. Their organic brews and small-batch creations are pure magic, transporting me to unexpected coffee havens!",
+  },
+  {
+    name: "Michael Smith",
+    review:
+      "Sip, savor, and smile - that's what RhodesCoffee Co. is all about! Their dedication to positive change reflects in every cup. Truly an exceptional coffee experience!",
+  },
+  {
+    name: "Sophia Williams",
+    review:
+      "I'm in love with RhodesCoffee Co.'s commitment to authenticity and nature. Their mobile coffee brings the taste of home wherever I go. A must-try for all coffee enthusiasts!",
+  },
+  {
+    name: "Ethan Brown",
+    review:
+      "RhodesCoffee Co. takes me on a coffee adventure every time. The thoughtfully sourced ingredients and affordable prices make it an absolute favorite. A top-notch mobile coffee spot!",
+  },
+  {
+    name: "Olivia Jones",
+    review:
+      "Roaming for change and savoring every sip! RhodesCoffee Co.'s artisanal blends are a breath of fresh air, a true catalyst for positive vibes. Can't get enough of their magic!",
+  },
+];
 
 const Index = () => {
   return (
@@ -163,6 +234,7 @@ const Index = () => {
                 textTransform: "uppercase",
                 fontWeight: "bold",
                 fontSize: "2.5rem",
+                fontFamily: "sans-serif",
               }}
             >
               RhodesCoffee Popular Coffee Menu
@@ -201,12 +273,19 @@ const Index = () => {
         </div>
       </section>
       {/* Section Choose */}
-      <section className="section kf-choose section-bg">
+      <section
+        className="section kf-choose section-bg"
+        style={{
+          backgroundColor: "#b1b1b1",
+        }}
+      >
         <div className="container">
           <div className="kf-parallax-icon pi-1" data-jarallax-element={-60}>
             <div
               className="p-icon"
-              style={{ backgroundImage: "url(images/parallax_icon1.png)" }}
+              style={{
+                backgroundImage: "url(images/parallax_icon1.png)",
+              }}
             />
           </div>
           <div className="kf-parallax-icon pi-2" data-jarallax-element={-80}>
@@ -227,7 +306,7 @@ const Index = () => {
                 className="kf-choose-image element-anim-1 scroll-animate"
                 data-animate="active"
               >
-                <img src="images/choose_img.jpg" alt="image" />
+                <img src="images/choose_img1.jpg" alt="image" />
               </div>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-5 offset-lg-1 align-self-center">
@@ -242,7 +321,7 @@ const Index = () => {
                   className="kf-title element-anim-1 scroll-animate"
                   data-animate="active"
                 >
-                  New London Coffee Founded For Extraordinary Test
+                  RhodesCoffee Best Coffee Mobile in Town Since 2022
                 </h3>
               </div>
               <div
@@ -250,9 +329,8 @@ const Index = () => {
                 data-animate="active"
               >
                 <p>
-                  Sed ut perspiciatis unde omnis iste natus error voluptate
-                  accusantium doloremque laudantium, totam rem aperiam eaque
-                  ipsa quae abillo inventore veritatis
+                  Step into the realm of coffee excellence with RhodesCoffee -
+                  Proudly Serving the Finest Mobile Brews in Town Since 2022!
                 </p>
               </div>
               <div className="kf-choose-list">
@@ -267,8 +345,8 @@ const Index = () => {
                     <div className="desc">
                       <h5 className="name">Natural Coffee Beans</h5>
                       <div className="subname">
-                        Sed ut perspiciatis unde omnis iste natus error
-                        voluptate accusantium doloremque
+                        100% Organic Coffee Beans blend with natural ingredients
+                        and flavors to create a unique taste experience.
                       </div>
                     </div>
                   </li>
@@ -282,8 +360,9 @@ const Index = () => {
                     <div className="desc">
                       <h5 className="name">100% ISO Certification</h5>
                       <div className="subname">
-                        Sed ut perspiciatis unde omnis iste natus error
-                        voluptate accusantium doloremque
+                        We thrive to provide the best quality coffee to our dear
+                        customers. Are truck is ISO certified and we are proud
+                        of it.
                       </div>
                     </div>
                   </li>
@@ -301,163 +380,33 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       {/* Section Grid Carousel */}
       <section className="section kf-grid-carousel">
         <div className="container">
           <Swiper {...sliderProps.kfGridCarousel} className="swiper-container">
-            <SwiperSlide className="swiper-slide">
-              <div
-                className="slide-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/grid_gal2.jpg" className="has-popup-image">
-                    <img src="images/grid_gal2.jpg" alt="image" />
-                  </a>
+            {itemsCarousel.map((item, index) => (
+              <SwiperSlide className="swiper-slide" key={index}>
+                <div
+                  className="slide-item element-anim-1 scroll-animate"
+                  data-animate="active"
+                >
+                  <div className="image kf-image-hover">
+                    <a href="images/grid_gal1.jpg" className="has-popup-image">
+                      <img src={item.image} alt="image" />
+                    </a>
+                  </div>
+                  <div className="desc">
+                    <h5 className="name">{item.name}</h5>
+                  </div>
                 </div>
-                <div className="desc">
-                  <h5 className="name">Latte</h5>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div
-                className="slide-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/grid_gal3.jpg" className="has-popup-image">
-                    <img src="images/grid_gal3.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Cappuccino</h5>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div
-                className="slide-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/grid_gal4.jpg" className="has-popup-image">
-                    <img src="images/grid_gal4.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Iced Coffee</h5>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div
-                className="slide-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/grid_gal5.jpg" className="has-popup-image">
-                    <img src="images/grid_gal5.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Espresso</h5>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div
-                className="slide-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/grid_gal1.jpg" className="has-popup-image">
-                    <img src="images/grid_gal1.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Black Coffee</h5>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div
-                className="slide-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/grid_gal2.jpg" className="has-popup-image">
-                    <img src="images/grid_gal2.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Latte</h5>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div
-                className="slide-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/grid_gal3.jpg" className="has-popup-image">
-                    <img src="images/grid_gal3.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Cappuccino</h5>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div
-                className="slide-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/grid_gal4.jpg" className="has-popup-image">
-                    <img src="images/grid_gal4.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Iced Coffee</h5>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div
-                className="slide-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/grid_gal5.jpg" className="has-popup-image">
-                    <img src="images/grid_gal5.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Espresso</h5>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div
-                className="slide-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <a href="images/grid_gal1.jpg" className="has-popup-image">
-                    <img src="images/grid_gal1.jpg" alt="image" />
-                  </a>
-                </div>
-                <div className="desc">
-                  <h5 className="name">Black Coffee</h5>
-                </div>
-              </div>
-            </SwiperSlide>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </section>
+      {/* end Section Grid Carousel */}
+
       {/* Section Testimonials Carousel */}
       <TestimonialsCarousel />
       {/* Section Numbers */}
