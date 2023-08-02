@@ -10,18 +10,13 @@ const Preloader = () => {
 
   return (
     <div className={`preloader ${loaded ? "loaded" : ""}`}>
-      <style>
-        @import
-        url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-      </style>
       <div
         className="centrize full-width"
         style={{ display: loaded ? "none" : "table" }}
       >
         <div className="vertical-center">
           <div className="spinner-logo">
-            <h1 style={{ fontFamily: "Caveat" }}>Rhodescoffee</h1>
-            <img src="images/updated_logo.png" alt="logo" />
+            <img src="images/updated_logo.png" alt="logo" width={900} />
             <h5>loading</h5>
             <div className="spinner-dot">
               <div className="spinner-line" />
