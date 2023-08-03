@@ -82,6 +82,24 @@ const reviews = [
   },
 ];
 
+const numbers = [
+  {
+    number: "256+",
+    name: "Premium Clients",
+    subname: "Sed ut perspiciatis unde",
+  },
+  {
+    number: "362+",
+    name: "Expert Members",
+    subname: "Sed ut perspiciatis unde",
+  },
+  {
+    number: "753+",
+    name: "Winning Awards",
+    subname: "Sed ut perspiciatis unde",
+  },
+  
+
 const Index = () => {
   return (
     <Layouts>
