@@ -100,6 +100,45 @@ const numbers = [
   },
 ];
 
+const services = [
+  {
+    image: "images/service1.jpg",
+    name: "Coffee",
+    icon: "las la-utensils",
+    link: "menu-coffee",
+  },
+  {
+    image: "images/service2.jpg",
+    name: "Smoothies",
+    icon: "las la-coffee",
+    link: "menu-coffee",
+  },
+  {
+    image: "images/service3.jpg",
+    name: "Bowls",
+    icon: "las la-glass-cheers",
+    link: "menu-coffee",
+  },
+  {
+    image: "images/service4.jpg",
+    name: "Tea",
+    icon: "las la-lemon",
+    link: "menu-coffee",
+  },
+  {
+    image: "images/service5.jpg",
+    name: "Cookies",
+    icon: "las la-cookie-bite",
+    link: "menu-coffee",
+  },
+  {
+    image: "images/service6.jpg",
+    name: "Juice",
+    icon: "las la-glass-whiskey",
+    link: "menu-coffee",
+  },
+];
+
 const Index = () => {
   return (
     <Layouts>
@@ -173,60 +212,29 @@ const Index = () => {
       <section className="section kf-services section-bg">
         <div className="container">
           <div className="kf-services-items row">
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            {services.map((item, index) => (
               <div
-                className="kf-services-item element-anim-1 scroll-animate"
-                data-animate="active"
+                className="col-xs-12 col-sm-12 col-md-12 col-lg-4"
+                key={index}
               >
-                <div className="image kf-image-hover">
-                  <Link href="menu-restaurant">
-                    <img src="images/service1.jpg" alt="image" />
-                  </Link>
-                </div>
-                <div className="desc">
-                  <div className="icon">
-                    <i className="las la-utensils" />
+                <div
+                  className="kf-services-item element-anim-1 scroll-animate"
+                  data-animate="active"
+                >
+                  <div className="image kf-image-hover">
+                    <Link href={item.link}>
+                      <img src={item.image} alt="image" />
+                    </Link>
                   </div>
-                  <h5 className="name">Restaurant Menu</h5>
+                  <div className="desc">
+                    <div className="icon">
+                      <i className={item.icon} />
+                    </div>
+                    <h5 className="name">{item.name}</h5>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-              <div
-                className="kf-services-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <Link href="menu-coffee">
-                    <img src="images/service2.jpg" alt="image" />
-                  </Link>
-                </div>
-                <div className="desc">
-                  <div className="icon">
-                    <i className="las la-coffee" />
-                  </div>
-                  <h5 className="name">Coffee Menu</h5>
-                </div>
-              </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-              <div
-                className="kf-services-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image kf-image-hover">
-                  <Link href="services">
-                    <img src="images/service3.jpg" alt="image" />
-                  </Link>
-                </div>
-                <div className="desc">
-                  <div className="icon">
-                    <i className="las la-glass-cheers" />
-                  </div>
-                  <h5 className="name">Food Services</h5>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -398,7 +406,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Section Grid Carousel */}
       <section className="section kf-grid-carousel">
         <div className="container">
@@ -424,7 +431,6 @@ const Index = () => {
         </div>
       </section>
       {/* end Section Grid Carousel */}
-
       {/* Section Testimonials Carousel */}
       <TestimonialsCarousel />
       {/* Section Numbers */}
@@ -452,6 +458,7 @@ const Index = () => {
         </div>
       </section>
       {/* Section Latest Blog */}
+      {/* 
       <section className="section kf-latest-blog section-bg">
         <div className="container">
           <div className="kf-titles align-center">
@@ -556,8 +563,9 @@ const Index = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Section CTA */}
+      {/*
       <section
         className="section kf-cta kf-parallax"
         style={{ backgroundImage: "url(images/cta_bg.jpg)" }}
@@ -593,6 +601,146 @@ const Index = () => {
           </div>
         </div>
       </section>
+      */}
+      {/* Section subscribe */}
+      <section
+        className="section kf-subscribe"
+        style={{
+          backgroundColor: "#b1b1b1",
+        }}
+      >
+        <div className="container">
+          <div className="kf-parallax-icon pi-1" data-jarallax-element={-60}>
+            <div
+              className="p-icon"
+              style={{
+                backgroundImage: "url(images/parallax_icon4.png)",
+              }}
+            />
+          </div>
+          <div className="kf-subscribe-items row">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+              <div
+                className="kf-subscribe-item element-anim-1 scroll-animate"
+                data-animate="active"
+              >
+                <div className="kf-subscribe-image">
+                  <img src="images/subscribe_img1.jpg" alt="image" />
+                </div>
+              </div>
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 align-self-center">
+              <div className="kf-titles">
+                <div
+                  className="kf-subtitle element-anim-1 scroll-animate"
+                  data-animate="active"
+                >
+                  Subscribe Our Newsletter
+                </div>
+                <h3
+                  className="kf-title element-anim-1 scroll-animate"
+                  data-animate="active"
+                >
+                  Get Every Single Update
+                </h3>
+              </div>
+              <div
+                className="kf-text element-anim-1 scroll-animate"
+                data-animate="active"
+              >
+                <p>
+                  Subscribe to our newsletter to get the latest news, updates
+                  and offers delivered directly in your inbox.
+                </p>
+              </div>
+              <form
+                className="kf-subscribe-form element-anim-1 scroll-animate"
+                data-animate="active"
+              >
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Enter your email"
+                />
+                <button type="submit" className="kf-btn">
+                  <span>subscribe</span>
+                  <i className="fas fa-chevron-right" />
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Gallery */}
+      <section className="section kf-gallery">
+        <div className="container">
+          <div className="kf-titles align-center">
+            <div
+              className="kf-subtitle element-anim-1 scroll-animate"
+              data-animate="active"
+            >
+              Our Gallery
+            </div>
+            <h3
+              className="kf-title element-anim-1 scroll-animate"
+              data-animate="active"
+            >
+              RhodesCoffee Co. Instagram Gallery
+            </h3>
+          </div>
+          <div className="kf-gallery-items">
+            <div className="row">
+              {itemsCarousel.map((item, index) => (
+                <div
+                  className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+                  key={index}
+                >
+                  <div
+                    className="kf-gallery-item element-anim-1 scroll-animate"
+                    data-animate="active"
+                  >
+                    <div className="image kf-image-hover">
+                      <a
+                        href="images/grid_gal1.jpg"
+                        className="has-popup-image"
+                      >
+                        <img src={item.image} alt="image" />
+                      </a>
+                    </div>
+
+                    <div className="desc">
+                      <div className="icon">
+                        <i className="fab fa-instagram" />
+                      </div>
+                      <h5 className="name">{item.name}</h5>
+                      <i className="fas fa-heart" />
+                      <span>1.2k</span>
+                      <span className="sep">|</span>
+                      <i className="fas fa-retweet" />
+                      <span>1.2k</span>
+                      <span className="sep">|</span>
+                      <i className="fas fa-comment" />
+                      <span>1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="align-center">
+            <Link
+              href="gallery"
+              className="kf-btn element-anim-1 scroll-animate"
+              data-animate="active"
+            >
+              <span>view all</span>
+              <i className="fas fa-chevron-right" />
+            </Link>
+          </div>
+        </div>
+      </section>
+      {/* Section Contact */}
     </Layouts>
   );
 };
