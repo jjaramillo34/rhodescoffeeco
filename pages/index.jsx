@@ -84,21 +84,21 @@ const reviews = [
 
 const numbers = [
   {
-    number: "256+",
-    name: "Premium Clients",
-    subname: "Sed ut perspiciatis unde",
+    number: "100+",
+    name: "Clients",
+    subname: "Rooted in authenticity, brewed for change",
   },
   {
-    number: "362+",
-    name: "Expert Members",
-    subname: "Sed ut perspiciatis unde",
+    number: "50+",
+    name: "First Time Clients",
+    subname: "Scents of the world in a cup",
   },
   {
-    number: "753+",
-    name: "Winning Awards",
-    subname: "Sed ut perspiciatis unde",
+    number: "50+",
+    name: "Occasional Clients",
+    subname: "A delightful journey of flavors",
   },
-  
+];
 
 const Index = () => {
   return (
@@ -431,33 +431,23 @@ const Index = () => {
       <section className="section kf-numbers">
         <div className="container">
           <div className="kf-numbers-items row">
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-              <div className="kf-numbers-item">
-                <div className="num">256+</div>
-                <div className="desc">
-                  <h5 className="name">Premium Clients</h5>
-                  <div className="subname">Sed ut perspiciatis unde</div>
+            {numbers.map((item, index) => (
+              <div
+                className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+                key={index}
+              >
+                <div
+                  className="kf-numbers-item element-anim-1 scroll-animate"
+                  data-animate="active"
+                >
+                  <div className="num">{item.number}</div>
+                  <div className="desc">
+                    <h5 className="name">{item.name}</h5>
+                    <div className="subname">{item.subname}</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-              <div className="kf-numbers-item">
-                <div className="num">362+</div>
-                <div className="desc">
-                  <h5 className="name">Expert Members</h5>
-                  <div className="subname">Sed ut perspiciatis unde</div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-              <div className="kf-numbers-item">
-                <div className="num">753+</div>
-                <div className="desc">
-                  <h5 className="name">Winning Awards</h5>
-                  <div className="subname">Sed ut perspiciatis unde</div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
