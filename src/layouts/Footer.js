@@ -1,3 +1,69 @@
+const gallery = [
+  {
+    id: 1,
+    image: "images/grid_gal1.jpg",
+  },
+  {
+    id: 2,
+    image: "images/grid_gal2.jpg",
+  },
+  {
+    id: 3,
+    image: "images/grid_gal3.jpg",
+  },
+  {
+    id: 4,
+    image: "images/grid_gal4.jpg",
+  },
+  {
+    id: 5,
+    image: "images/grid_gal5.jpg",
+  },
+  {
+    id: 6,
+    image: "images/grid_gal6.jpg",
+  },
+];
+
+const hours = [
+  {
+    id: 1,
+    day: "Saturday & Sunday",
+    time: "08:00 am - 2:00pm",
+  },
+  {
+    id: 2,
+    day: "Monday & Friday",
+    time: "07:00 am - 1:00pm",
+  },
+  {
+    id: 3,
+    day: "Tuesday - Thursday",
+    time: "Closed",
+  },
+];
+
+const location = [
+  {
+    id: 1,
+    name: "Location: ",
+    description: "4759 Salina Street",
+    icon: "las la-map-marker",
+  },
+  {
+    id: 2,
+    name: "Email Address: ",
+    description: "contact@rhodescoffeeco.com",
+    icon: "las la-envelope-open-text",
+  },
+  {
+    id: 3,
+    name: "Phone Number: ",
+    description: "(315) 430-5996",
+    icon: "las la-phone",
+  },
+];
+
 const Footer = () => {
   return (
     <div className="kf-footer">
@@ -9,8 +75,15 @@ const Footer = () => {
               className="kf-logo element-anim-1 scroll-animate"
               data-animate="active"
             >
-              <a href="index.html">
-                <img src="images/logo.png" alt="image" />
+              <a href="/">
+                <img
+                  src="images/logo.png"
+                  alt="image"
+                  style={{
+                    width: "100%",
+                    maxHeight: "300px",
+                  }}
+                />
               </a>
             </div>
           </div>
@@ -22,17 +95,40 @@ const Footer = () => {
             >
               <h5>Working Hours</h5>
               <ul>
-                <li>
-                  Sunday - Thursday
-                  <em>08:00 am - 09:00pm</em>
-                </li>
-                <li>
-                  Only Friday
-                  <em>03:00 pm - 09:00pm</em>
-                </li>
-                <li>
-                  <strong>Saturday Close</strong>
-                </li>
+                {hours.map((item) =>
+                  item.time === "Closed" ? (
+                    <li key={item.id}>
+                      <em
+                        style={{
+                          color: "white",
+                          fontWeight: "bolder",
+                        }}
+                      >
+                        {item.day}
+                      </em>
+                      <strong
+                        style={{
+                          color: "black",
+                          fontWeight: "bolder",
+                        }}
+                      >
+                        {item.time}
+                      </strong>
+                    </li>
+                  ) : (
+                    <li key={item.id}>
+                      <em
+                        style={{
+                          color: "white",
+                          fontWeight: "bolder",
+                        }}
+                      >
+                        {item.day}
+                      </em>
+                      {item.time}
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
@@ -44,21 +140,24 @@ const Footer = () => {
             >
               <h5>Contact Us</h5>
               <ul>
-                <li>
-                  <i className="las la-map-marker" />
-                  <em>Location :</em>
-                  55 Main Street, New York
-                </li>
-                <li>
-                  <i className="las la-envelope-open-text" />
-                  <em>Email Address :</em>
-                  kaffendev@gmail.com
-                </li>
-                <li>
-                  <i className="las la-phone" />
-                  <em>Phone Number :</em>
-                  +012 (345) 678 99
-                </li>
+                {location.map((item) => (
+                  <li key={item.id}>
+                    <i
+                      className={item.icon}
+                      style={{
+                        color: "black",
+                      }}
+                    />
+                    <em
+                      style={{
+                        color: "black",
+                      }}
+                    >
+                      {item.name}
+                    </em>
+                    {item.description}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -70,54 +169,16 @@ const Footer = () => {
             >
               <h5>Gallery</h5>
               <ul>
-                <li>
-                  <a
-                    href="images/grid_gal1.jpg"
-                    className="kf-image-hover has-popup-image"
-                  >
-                    <img src="images/grid_gal1.jpg" alt="image" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="images/grid_gal2.jpg"
-                    className="kf-image-hover has-popup-image"
-                  >
-                    <img src="images/grid_gal2.jpg" alt="image" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="images/grid_gal3.jpg"
-                    className="kf-image-hover has-popup-image"
-                  >
-                    <img src="images/grid_gal3.jpg" alt="image" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="images/grid_gal4.jpg"
-                    className="kf-image-hover has-popup-image"
-                  >
-                    <img src="images/grid_gal4.jpg" alt="image" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="images/grid_gal5.jpg"
-                    className="kf-image-hover has-popup-image"
-                  >
-                    <img src="images/grid_gal5.jpg" alt="image" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="images/grid_gal6.jpg"
-                    className="kf-image-hover has-popup-image"
-                  >
-                    <img src="images/grid_gal1.jpg" alt="image" />
-                  </a>
-                </li>
+                {gallery.map((item) => (
+                  <li key={item.id}>
+                    <a
+                      href={item.image}
+                      className="kf-image-hover has-popup-image"
+                    >
+                      <img src={item.image} alt="image" />
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
