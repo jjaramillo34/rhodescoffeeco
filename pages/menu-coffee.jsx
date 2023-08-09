@@ -1,12 +1,106 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import { useState } from "react";
 import Layouts from "@/src/layouts/Layouts";
-
 import dynamic from "next/dynamic";
-
+import { Viewer } from "@react-pdf-viewer/core";
+import { Worker } from "@react-pdf-viewer/core";
+import { toolbarPlugin } from "@react-pdf-viewer/toolbar";
+import { zoomPlugin } from "@react-pdf-viewer/zoom";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+// Import styles
+import "@react-pdf-viewer/toolbar/lib/styles/index.css";
+// Import styles
+import "@react-pdf-viewer/zoom/lib/styles/index.css";
 const CoffeeMenu = dynamic(() => import("@/src/components/CoffeeMenu"), {
   ssr: false,
 });
 
 const MenuCoffee = () => {
+  const [shown, setShown] = useState(false);
+  const toolbarPluginInstance = toolbarPlugin();
+  const zoomPluginInstance = zoomPlugin();
+  const { ZoomInButton, ZoomOutButton, ZoomPopover } = zoomPluginInstance;
+  const modalBody = () => (
+    <div
+      style={{
+        backgroundColor: "#fff",
+
+        /* Fixed position */
+        left: 0,
+        position: "fixed",
+        top: 0,
+
+        /* Take full size */
+        height: "100%",
+        width: "100%",
+
+        /* Displayed on top of other elements */
+        zIndex: 9999,
+
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
+      }}
+    >
+      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+        // add a close button to the right top corner
+        <div
+          className="rpv-core__viewer"
+          style={{
+            border: "1px solid rgba(0, 0, 0, 0.3)",
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+          }}
+        >
+          <div
+            style={{
+              alignItems: "center",
+              backgroundColor: "#eeeeee",
+              borderBottom: "1px solid rgba(0, 0, 0, 0.1)",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <button
+              style={{
+                backgroundColor: "#b99272",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "16px",
+              }}
+              onClick={() => setShown(false)}
+            >
+              Close
+            </button>
+          </div>
+          <div
+            style={{
+              alignItems: "center",
+              backgroundColor: "#eeeeee",
+              borderBottom: "1px solid rgba(0, 0, 0, 0.1)",
+              display: "flex",
+              justifyContent: "center",
+              padding: "4px",
+            }}
+          >
+            <ZoomOutButton />
+            <ZoomPopover />
+            <ZoomInButton />
+          </div>
+          <div
+            style={{
+              flex: 1,
+              overflow: "hidden",
+            }}
+          >
+            <Viewer fileUrl="images/menu.pdf" plugins={[zoomPluginInstance]} />
+          </div>
+        </div>
+      </Worker>
+    </div>
+  );
   return (
     <Layouts>
       {/* Section Started Inner */}
@@ -28,7 +122,7 @@ const MenuCoffee = () => {
       {/* Section Menu */}
       <CoffeeMenu />
       {/* Section Reservation */}
-      <section className="section kf-reservation kf-section-no-margin">
+      {/*<section className="section kf-reservation kf-section-no-margin">
         <div className="container">
           <div
             className="kf-reservation-form element-anim-1 scroll-animate"
@@ -111,8 +205,19 @@ const MenuCoffee = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
       {/* Section Brands */}
+
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              <button onClick={() => setShown(true)}>Check Our Menu</button>
+              {shown && ReactDOM.createPortal(modalBody(), document.body)}
+            </div>
+          </div>
+        </div>
+      </section>
       <div className="section kf-brands">
         <div className="container">
           <div className="kf-brands-items row">

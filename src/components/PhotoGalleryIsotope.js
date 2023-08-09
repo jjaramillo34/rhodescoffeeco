@@ -1,6 +1,51 @@
 import Isotope from "isotope-layout";
 import { useEffect, useRef, useState } from "react";
 
+const galleryItems = [
+  {
+    image: "images/ins_gal1.jpg",
+    name: "black coffee",
+    subname: "hot coffee",
+    filterKey: "hot-coffee",
+  },
+  {
+    image: "images/ins_gal2.jpg",
+    name: "chocolate",
+    subname: "hot chocolate",
+    filterKey: "hot-coffee",
+  },
+  {
+    image: "images/ins_gal3.jpg",
+    name: "Iced coffee",
+    subname: "refreshing drink",
+    filterKey: "cold-drink",
+  },
+  {
+    image: "images/ins_gal4.jpg",
+    name: "Hot Cappuccino",
+    subname: "Cappuccino",
+    filterKey: "hot-coffee",
+  },
+  {
+    image: "images/ins_gal5.jpg",
+    name: "Chai Latte",
+    subname: "Latte",
+    filterKey: "hot-coffee",
+  },
+  {
+    image: "images/ins_gal6.jpg",
+    name: "Smoothie",
+    subname: "refreshing drink",
+    filterKey: "smoothie",
+  },
+  {
+    image: "images/ins_gal7.jpg",
+    name: "Hot coffee",
+    subname: "hot coffee",
+    filterKey: "hot-coffee",
+  },
+];
+
 const PhotoGalleryIsotope = () => {
   // Isotope
   const isotope = useRef();
@@ -100,186 +145,35 @@ const PhotoGalleryIsotope = () => {
           </a>
         </div>
         <div className="kf-gallery-items row">
-          <div className="kf-gallery-col col-xs-12 col-sm-12 col-md-6 col-lg-4 all fast-food">
+          {galleryItems.map((item, index) => (
             <div
-              className="kf-gallery-item element-anim-1 scroll-animate"
-              data-animate="active"
+              key={index}
+              className={`kf-gallery-col col-xs-12 col-sm-12 col-md-6 col-lg-4 all ${item.filterKey}`}
             >
-              <div className="image kf-image-hover">
-                <a href="images/ins_gal1.jpg" className="has-popup-gallery">
-                  <img src="images/ins_gal1.jpg" alt="image" />
-                </a>
-              </div>
-              <div className="desc">
-                <div className="name">
-                  <div className="value">italian burger</div>
+              <div
+                className="kf-gallery-item element-anim-1 scroll-animate"
+                data-animate="active"
+              >
+                <div className="image kf-image-hover">
+                  <a
+                    href={item.image}
+                    className="has-popup-gallery"
+                    data-fancybox="gallery"
+                  >
+                    <img src={item.image} alt="image" />
+                  </a>
                 </div>
-                <div className="subname">
-                  <div className="value">fast food</div>
+                <div className="desc">
+                  <div className="name">
+                    <div className="value">{item.name}</div>
+                  </div>
+                  <div className="subname">
+                    <div className="value">{item.subname}</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="kf-gallery-col col-xs-12 col-sm-12 col-md-6 col-lg-4 all dinner-menu">
-            <div
-              className="kf-gallery-item element-anim-1 scroll-animate"
-              data-animate="active"
-            >
-              <div className="image kf-image-hover">
-                <a href="images/ins_gal2.jpg" className="has-popup-gallery">
-                  <img src="images/ins_gal2.jpg" alt="image" />
-                </a>
-              </div>
-              <div className="desc">
-                <div className="name">
-                  <div className="value">italian pasta</div>
-                </div>
-                <div className="subname">
-                  <div className="value">dinner menu</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="kf-gallery-col col-xs-12 col-sm-12 col-md-6 col-lg-4 all fast-food">
-            <div
-              className="kf-gallery-item element-anim-1 scroll-animate"
-              data-animate="active"
-            >
-              <div className="image kf-image-hover">
-                <a href="images/ins_gal3.jpg" className="has-popup-gallery">
-                  <img src="images/ins_gal3.jpg" alt="image" />
-                </a>
-              </div>
-              <div className="desc">
-                <div className="name">
-                  <div className="value">Chicken burger</div>
-                </div>
-                <div className="subname">
-                  <div className="value">fast food</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="kf-gallery-col col-xs-12 col-sm-12 col-md-6 col-lg-4 all special-pizza">
-            <div
-              className="kf-gallery-item element-anim-1 scroll-animate"
-              data-animate="active"
-            >
-              <div className="image kf-image-hover">
-                <a href="images/ins_gal4.jpg" className="has-popup-gallery">
-                  <img src="images/ins_gal4.jpg" alt="image" />
-                </a>
-              </div>
-              <div className="desc">
-                <div className="name">
-                  <div className="value">italian pizza</div>
-                </div>
-                <div className="subname">
-                  <div className="value">special pizza</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="kf-gallery-col col-xs-12 col-sm-12 col-md-6 col-lg-4 all hot-coffee">
-            <div
-              className="kf-gallery-item element-anim-1 scroll-animate"
-              data-animate="active"
-            >
-              <div className="image kf-image-hover">
-                <a href="images/ins_gal5.jpg" className="has-popup-gallery">
-                  <img src="images/ins_gal5.jpg" alt="image" />
-                </a>
-              </div>
-              <div className="desc">
-                <div className="name">
-                  <div className="value">cappuccino</div>
-                </div>
-                <div className="subname">
-                  <div className="value">hot coffee</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="kf-gallery-col col-xs-12 col-sm-12 col-md-6 col-lg-4 all fast-food">
-            <div
-              className="kf-gallery-item element-anim-1 scroll-animate"
-              data-animate="active"
-            >
-              <div className="image kf-image-hover">
-                <a href="images/ins_gal6.jpg" className="has-popup-gallery">
-                  <img src="images/ins_gal6.jpg" alt="image" />
-                </a>
-              </div>
-              <div className="desc">
-                <div className="name">
-                  <div className="value">Chicken nuggets</div>
-                </div>
-                <div className="subname">
-                  <div className="value">fast food</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="kf-gallery-col col-xs-12 col-sm-12 col-md-6 col-lg-4 all hot-coffee">
-            <div
-              className="kf-gallery-item element-anim-1 scroll-animate"
-              data-animate="active"
-            >
-              <div className="image kf-image-hover">
-                <a href="images/grid_gal1.jpg" className="has-popup-gallery">
-                  <img src="images/grid_gal1.jpg" alt="image" />
-                </a>
-              </div>
-              <div className="desc">
-                <div className="name">
-                  <div className="value">Black coffee</div>
-                </div>
-                <div className="subname">
-                  <div className="value">hot coffee</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="kf-gallery-col col-xs-12 col-sm-12 col-md-6 col-lg-4 all dinner-menu">
-            <div
-              className="kf-gallery-item element-anim-1 scroll-animate"
-              data-animate="active"
-            >
-              <div className="image kf-image-hover">
-                <a href="images/menu_r4.jpg" className="has-popup-gallery">
-                  <img src="images/menu_r4.jpg" alt="image" />
-                </a>
-              </div>
-              <div className="desc">
-                <div className="name">
-                  <div className="value">Spaghetti</div>
-                </div>
-                <div className="subname">
-                  <div className="value">dinner menu</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="kf-gallery-col col-xs-12 col-sm-12 col-md-6 col-lg-4 all dinner-menu">
-            <div
-              className="kf-gallery-item element-anim-1 scroll-animate"
-              data-animate="active"
-            >
-              <div className="image kf-image-hover">
-                <a href="images/menu_r6.jpg" className="has-popup-gallery">
-                  <img src="images/menu_r6.jpg" alt="image" />
-                </a>
-              </div>
-              <div className="desc">
-                <div className="name">
-                  <div className="value">Sea Fish</div>
-                </div>
-                <div className="subname">
-                  <div className="value">dinner menu</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

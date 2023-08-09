@@ -131,9 +131,6 @@ const Header = () => {
                     <li>
                       <Link href="/">Coffee House</Link>
                     </li>
-                    <li>
-                      <Link href="index-2">Restaurant</Link>
-                    </li>
                   </ul>
                 </li>
                 <li>
@@ -148,9 +145,9 @@ const Header = () => {
                     <li>
                       <Link href="menu-coffee">Menu Coffee</Link>
                     </li>
-                    <li>
+                    {/*<li>
                       <Link href="menu-restaurant">Menu Restaurant</Link>
-                    </li>
+                    </li>*/}
                   </ul>
                 </li>
                 <li>
@@ -162,9 +159,11 @@ const Header = () => {
                     <li>
                       <Link href="services">Service</Link>
                     </li>
+                    {/*
                     <li>
                       <Link href="reservation">Reservation</Link>
                     </li>
+                    */}
                     <li>
                       <Link href="history">History</Link>
                     </li>
@@ -212,7 +211,7 @@ const Header = () => {
               <span />
             </a>
             {/* btn check menu*/}
-            <Link href="menu-coffee" className="kf-btn h-btn">
+            <Link href="coffee-menu" className="kf-btn h-btn">
               <span>Check Our Menu</span>
               <i className="fas fa-chevron-right" />
             </Link>
@@ -234,9 +233,11 @@ const Header = () => {
                 <li>
                   <Link href="/">Coffee House</Link>
                 </li>
+                {/*
                 <li>
                   <Link href="index-2">Restaurant</Link>
                 </li>
+                */}
               </ul>
             </li>
             <li>
@@ -252,9 +253,11 @@ const Header = () => {
                 <li>
                   <Link href="menu-coffee">Menu Coffee</Link>
                 </li>
+                {/*
                 <li>
                   <Link href="menu-restaurant">Menu Restaurant</Link>
                 </li>
+                */}
               </ul>
             </li>
             <li className="has-children">
