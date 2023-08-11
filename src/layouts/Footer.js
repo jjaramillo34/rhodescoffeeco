@@ -77,11 +77,12 @@ const Footer = () => {
             >
               <a href="/">
                 <img
-                  src="images/logo.png"
+                  src="images/logo_footer.png"
                   alt="image"
                   style={{
-                    width: "100%",
-                    maxHeight: "300px",
+                    height: "300px",
+                    maxHeight: "400px",
+                    maxWidth: "400px",
                   }}
                 />
               </a>

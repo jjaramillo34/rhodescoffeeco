@@ -5,6 +5,9 @@ import { sliderProps } from "@/src/sliderProps";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+// import js component file for merchandise
+import Merchandise from "@/src/components/Merchandise";
+
 // import menu from "@/src/menu";
 import items from "@/src/components/data/menu";
 
@@ -673,7 +676,7 @@ const Index = () => {
       </section>
 
       {/* Section Gallery */}
-      <section className="section kf-gallery">
+      {/*<section className="section kf-gallery">
         <div className="container">
           <div className="kf-titles align-center">
             <div
@@ -740,7 +743,10 @@ const Index = () => {
           </div>
         </div>
       </section>
-      {/* Section Contact */}
+      */}
+      {/* Section Merchandise */}
+      <Merchandise />
+      {/* End Section Merchandise */}
     </Layouts>
   );
 };

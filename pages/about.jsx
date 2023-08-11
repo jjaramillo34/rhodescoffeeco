@@ -3,6 +3,9 @@ import TestimonialsCarousel from "@/src/components/sliders/TestimonialsCarousel"
 import Layouts from "@/src/layouts/Layouts";
 import Link from "next/link";
 
+// import merchandise from "@/src/data/merchandise";
+import Merchandise from "@/src/components/Merchandise";
+
 const numbers2 = [
   {
     icon: "las la-gem",
@@ -413,61 +416,6 @@ const About = () => {
         </div>
       </section>*/}
       {/* Section Sell Merchandise */}
-      <section className="section kf-cta kf-parallax">
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-              <div className="kf-titles">
-                <div
-                  className="kf-subtitle element-anim-1 scroll-animate"
-                  data-animate="active"
-                >
-                  RhodesCoffeeCo Merchandise
-                </div>
-                <h3
-                  className="kf-title element-anim-1 scroll-animate"
-                  data-animate="active"
-                >
-                  Buy RhodesCoffeeCo Merchandise
-                </h3>
-              </div>
-            </div>
-          </div>
-          <hr />
-          <div className="kf-merchandise-items row">
-            {merchandise.map((item, index) => (
-              <div
-                key={index}
-                className="col-xs-12 col-sm-12 col-md-12 col-lg-4"
-              >
-                <div
-                  className="kf-merchandise-item element-anim-1 scroll-animate"
-                  data-animate="active"
-                >
-                  <div className="image">
-                    <img src={item.image} alt="image" />
-                  </div>
-                  <div className="desc">
-                    <h5 className="name">{item.name}</h5>
-                    <div className="subname">{item.subname}</div>
-                  </div>
-                  <div className="kf-btn">
-                    <Link
-                      href="https://form.jotform.com/232175552619156"
-                      className="kf-btn element-anim-1 scroll-animate"
-                      data-animate="active"
-                      target="_blank"
-                    >
-                      <span>Buy Now</span>
-                      <i className="fas fa-chevron-right" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </Layouts>
   );
 };

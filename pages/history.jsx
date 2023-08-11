@@ -4,6 +4,45 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+const data = [
+  {
+    image: "images/history1.jpg",
+    subname: "Rhodes Coffee Co. was founded in Pulaski, NY",
+    name: "In the beginning, there was coffee and a dream",
+    text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
+    date: "1996",
+    label: "25 January 1996",
+    dateValue: "1996",
+  },
+  {
+    image: "images/history2.jpg",
+    subname: "We started cooking for you",
+    name: "Three Front-End Auditing Tools I Discovered Recently Useful Front-End Boilerplates",
+    text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
+    date: "1998",
+    label: "14 December 1998",
+    dateValue: "1998",
+  },
+  {
+    image: "images/history3.jpg",
+    subname: "We got a Michelin star",
+    name: "Three Front-End Auditing Tools I Discovered Recently Useful Front-End Boilerplates",
+    text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
+    date: "2004",
+    label: "10 June 2004",
+    dateValue: "2004",
+  },
+  {
+    image: "images/history4.jpg",
+    subname: "A new restaurant was opened in Paris",
+    name: "Three Front-End Auditing Tools I Discovered Recently Useful Front-End Boilerplates",
+    text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
+    date: "2008",
+    label: "15 October 2008",
+    dateValue: "2008",
+  },
+];
+
 const History = () => {
   useEffect(() => {
     const bullets = document.querySelectorAll(
@@ -60,17 +99,21 @@ const History = () => {
             data-animate="active"
           >
             <div className="text">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam eaque ipsa
-              quae ab illo inventore veritatis et voluptatem sequi nesciunt
-              neque porro quisqe
+              Inspired by the road [Rhode] - the unexpected places life takes
+              us, the people we meet, and ultimately - the place we call home -
+              Rhodes Coffee Co. is an homage to our roots. Rooted in the belief
+              that life is best lived authentically and organically - and as
+              close to nature as possible. Rhodes Coffee Co. strives to be a
+              catalyst for positive change with thoughtfully sourced organic
+              coffee & ingredients + small batch, artisanal products at an
+              affordable price
             </div>
             <div className="info">
               <div className="img">
                 <img src="images/quote_img2.jpg" alt="image" />
               </div>
-              <h5 className="name">Dante J. Castaneda</h5>
-              <div className="subname">CEO &amp; Founder</div>
+              <h5 className="name">Tricia Hax</h5>
+              <div className="subname">Owner &amp; Founder</div>
             </div>
           </div>
         </div>
@@ -83,7 +126,7 @@ const History = () => {
               className="kf-subtitle element-anim-1 scroll-animate"
               data-animate="active"
             >
-              Our rhodescoffee History
+              Our History &amp; Milestones at RhodesCoffeeCo
             </div>
             <h3
               className="kf-title element-anim-1 scroll-animate"
@@ -95,126 +138,28 @@ const History = () => {
           <div className="kf-history-carousel">
             <Swiper {...sliderProps.kfHistory} className="swiper-container">
               <div className="swiper-wrapper">
-                <SwiperSlide className="swiper-slide">
-                  <div
-                    className="kf-history-item element-anim-1 scroll-animate"
-                    data-animate="active"
-                  >
-                    <div className="image">
-                      <img src="images/history1.jpg" alt="image" />
-                    </div>
-                    <div className="desc">
-                      <div className="subname">
-                        rhodescoffee restaurant was founded
+                {data.map((item, index) => (
+                  <SwiperSlide className="swiper-slide" key={index}>
+                    <div
+                      className="kf-history-item element-anim-1 scroll-animate"
+                      data-animate="active"
+                    >
+                      <div className="image">
+                        <img src={item.image} alt="image" />
                       </div>
-                      <h5 className="name">
-                        Three Front-End Auditing Tools I Discovered Recently
-                        Useful Front-End Boilerplates
-                      </h5>
-                      <div className="kf-text">
-                        <p>
-                          Sorem ipsum dolor sit am consectetur adipiscing elit,
-                          sed do eiusmod tempor incididunt ut labore et dolore
-                          magna aliqua. Quis ipsum suspendi sultrices gravida.
-                          Risus commodo viverra maecenas cumsan lacus vel
-                          facilisis.
-                        </p>
+                      <div className="desc">
+                        <div className="subname">{item.subname}</div>
+                        <h5 className="name">{item.name}</h5>
+                        <div className="kf-text">
+                          <p>{item.text}</p>
+                        </div>
                       </div>
+                      <div className="date">{item.date}</div>
+                      <div className="label">{item.label}</div>
+                      <div className="date-value">{item.dateValue}</div>
                     </div>
-                    <div className="date">1996</div>
-                    <div className="label">25 January 1996</div>
-                    <div className="date-value">1996</div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide">
-                  <div
-                    className="kf-history-item element-anim-1 scroll-animate"
-                    data-animate="active"
-                  >
-                    <div className="image">
-                      <img src="images/history2.jpg" alt="image" />
-                    </div>
-                    <div className="desc">
-                      <div className="subname">We started cooking for you</div>
-                      <h5 className="name">
-                        Three Front-End Auditing Tools I Discovered Recently
-                        Useful Front-End Boilerplates
-                      </h5>
-                      <div className="kf-text">
-                        <p>
-                          Sorem ipsum dolor sit am consectetur adipiscing elit,
-                          sed do eiusmod tempor incididunt ut labore et dolore
-                          magna aliqua. Quis ipsum suspendi sultrices gravida.
-                          Risus commodo viverra maecenas cumsan lacus vel
-                          facilisis.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="date">1998</div>
-                    <div className="label">14 December 1998</div>
-                    <div className="date-value">1998</div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide">
-                  <div
-                    className="kf-history-item element-anim-1 scroll-animate"
-                    data-animate="active"
-                  >
-                    <div className="image">
-                      <img src="images/history3.jpg" alt="image" />
-                    </div>
-                    <div className="desc">
-                      <div className="subname">We got a Michelin star</div>
-                      <h5 className="name">
-                        Three Front-End Auditing Tools I Discovered Recently
-                        Useful Front-End Boilerplates
-                      </h5>
-                      <div className="kf-text">
-                        <p>
-                          Sorem ipsum dolor sit am consectetur adipiscing elit,
-                          sed do eiusmod tempor incididunt ut labore et dolore
-                          magna aliqua. Quis ipsum suspendi sultrices gravida.
-                          Risus commodo viverra maecenas cumsan lacus vel
-                          facilisis.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="date">2004</div>
-                    <div className="label">10 June 2004</div>
-                    <div className="date-value">2004</div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide">
-                  <div
-                    className="kf-history-item element-anim-1 scroll-animate"
-                    data-animate="active"
-                  >
-                    <div className="image">
-                      <img src="images/history4.jpg" alt="image" />
-                    </div>
-                    <div className="desc">
-                      <div className="subname">
-                        A new restaurant was opened in Paris
-                      </div>
-                      <h5 className="name">
-                        Three Front-End Auditing Tools I Discovered Recently
-                        Useful Front-End Boilerplates
-                      </h5>
-                      <div className="kf-text">
-                        <p>
-                          Sorem ipsum dolor sit am consectetur adipiscing elit,
-                          sed do eiusmod tempor incididunt ut labore et dolore
-                          magna aliqua. Quis ipsum suspendi sultrices gravida.
-                          Risus commodo viverra maecenas cumsan lacus vel
-                          facilisis.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="date">2008</div>
-                    <div className="label">15 October 2008</div>
-                    <div className="date-value">2008</div>
-                  </div>
-                </SwiperSlide>
+                  </SwiperSlide>
+                ))}
               </div>
               <div className="swiper-pagination" />
               <div className="swiper-scrollbar" />

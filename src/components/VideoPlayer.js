@@ -1,4 +1,5 @@
 import { useState } from "react";
+// autoPlay: true,
 const VideoPlayer = ({ videoBg, extraClass, dataAnimation }) => {
   const [video, setVideo] = useState(false);
   return (
@@ -13,11 +14,16 @@ const VideoPlayer = ({ videoBg, extraClass, dataAnimation }) => {
       {video && (
         <iframe
           className="js-video-iframe"
-          data-src="https://www.youtube.com/embed/Gu6z6kIukgg?showinfo=0&rel=0&autoplay=1"
-          src="https://www.youtube.com/embed/Gu6z6kIukgg?showinfo=0&rel=0&autoplay=1"
+          data-src="https://youtube.com/shorts/uRTU4-rfyXo"
+          src="images/main_video.mp4"
+          allowFullScreen
         />
       )}
-      <div className="play" onClick={() => setVideo(true)}>
+      <div
+        className="play"
+        onClick={() => setVideo(true)}
+        style={{ cursor: "pointer" }}
+      >
         <i className="fas fa-play" />
       </div>
     </div>
