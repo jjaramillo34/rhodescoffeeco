@@ -4,15 +4,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const items = [
   {
-    image: "images/started_img_n5.jpg",
-    title1: "Fueling your day",
+    image: "images/started_img_n1.jpeg",
+    title1: "Fueling your day,",
     title2: "on the go!",
     subtitle: "From roads to flavors - taste the essence of Rhodes.",
     link1: "menu-coffee",
     link2: "reservation",
   },
   {
-    image: "images/started_img_n8.jpg",
+    image: "images/started_img_n2.jpeg",
     title1: "Brewing happiness,",
     title2: "on cup at a time!",
     subtitle: "Adventure in every cup - embrace the unexpected with us!",
@@ -20,7 +20,7 @@ const items = [
     link2: "reservation",
   },
   {
-    image: "images/started_img_n11.jpg",
+    image: "images/started_img_n3.jpeg",
     title1: "Coffee with soul,",
     title2: "straight from the road!",
     subtitle: "Where nature blends with coffee - journey with Rhodes!",
@@ -28,10 +28,34 @@ const items = [
     link2: "reservation",
   },
   {
-    image: "images/started_img_n16.jpg",
+    image: "images/started_img_n4.jpeg",
     title1: "Artisanal blends, ",
     title2: "handcrafted with love!",
     subtitle: "Small-batch wonders, big smiles - Rhodes Coffee Co. delivers!",
+    link1: "menu-coffee",
+    link2: "reservation",
+  },
+  {
+    image: "images/started_img_n5.jpeg",
+    title1: "Coffee with a cause,",
+    title2: "for a better tomorrow!",
+    subtitle: "Sip with purpose - join us in our mission!",
+    link1: "menu-coffee",
+    link2: "reservation",
+  },
+  {
+    image: "images/started_img_n6.jpeg",
+    title1: "Coffee with a cause,",
+    title2: "for a better tomorrow!",
+    subtitle: "Sip with purpose - join us in our mission!",
+    link1: "menu-coffee",
+    link2: "reservation",
+  },
+  {
+    image: "images/started_img_n7.jpeg",
+    title1: "Coffee with a cause,",
+    title2: "for a better tomorrow!",
+    subtitle: "Sip with purpose - join us in our mission!",
     link1: "menu-coffee",
     link2: "reservation",
   },

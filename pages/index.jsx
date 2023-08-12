@@ -205,7 +205,7 @@ const Index = () => {
                 className="kf-about-image element-anim-1 scroll-animate"
                 data-animate="active"
               >
-                <img src="images/about_img1.png" alt="image" />
+                <img src="images/about_img1.jpeg" alt="image" />
               </div>
             </div>
           </div>
