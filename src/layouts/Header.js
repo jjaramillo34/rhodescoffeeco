@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { stickyNav } from "../utils";
 
+import CheckOpeningHours from "./OpeningHours";
+
 const social = [
   {
     icon: "fab fa-facebook-f",
@@ -21,46 +23,12 @@ const social = [
   },
 ];
 
-const openingHours = [
-  {
-    day: "Monday",
-    time: "07:00 am - 1:00pm",
-  },
-  {
-    day: "Tuesday",
-    time: "Closed",
-  },
-  {
-    day: "Wednesday",
-    time: "Closed",
-  },
-  {
-    day: "Thursday",
-    time: "Closed",
-  },
-  {
-    day: "Friday",
-    time: "07:00 am - 1:00pm",
-  },
-  {
-    day: "Saturday",
-    time: "08:00 am - 2:00pm",
-  },
-  {
-    day: "Sunday",
-    time: "08:00 am - 2:00pm",
-  },
-];
-
 const Header = () => {
   useEffect(() => {
     stickyNav();
   }, []);
 
   const [toggle, setToggle] = useState(false);
-  const date = new Date();
-  const getTime = date.getHours();
-  const getDay = date.getDay();
 
   useEffect(() => {
     if (document.querySelector("header").className.includes("animated")) {
@@ -83,61 +51,7 @@ const Header = () => {
         <div className="row">
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
             {/* hours */}
-
-            <div
-              className="kf-h-group"
-              style={{
-                color: "black",
-                fontSize: "1.0rem",
-              }}
-            >
-              {openingHours.map((item) => (
-                <div key={item.id}>
-                  {item.day === "Sunday" && getDay === 0 && (
-                    <div>
-                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
-                      {item.time} <span style={{ color: "green" }}>Open</span>
-                    </div>
-                  )}
-                  {item.day === "Monday" && getDay === 1 && (
-                    <div>
-                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
-                      {item.time} <span style={{ color: "green" }}>Open</span>
-                    </div>
-                  )}
-                  {item.day === "Tuesday" && getDay === 2 && (
-                    <div>
-                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
-                      {item.time} <span style={{ color: "red" }}>Closed</span>
-                    </div>
-                  )}
-                  {item.day === "Wednesday" && getDay === 3 && (
-                    <div>
-                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
-                      {item.time} <span style={{ color: "red" }}>Closed</span>
-                    </div>
-                  )}
-                  {item.day === "Thursday" && getDay === 4 && (
-                    <div>
-                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
-                      {item.time} <span style={{ color: "red" }}>Closed</span>
-                    </div>
-                  )}
-                  {item.day === "Friday" && getDay === 5 && (
-                    <div>
-                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
-                      {item.time} <span style={{ color: "green" }}>Open</span>
-                    </div>
-                  )}
-                  {item.day === "Saturday" && getDay === 6 && (
-                    <div>
-                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
-                      {item.time} <span style={{ color: "green" }}>Open</span>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+            <CheckOpeningHours />
           </div>
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4 align-center">
             {/* social */}
