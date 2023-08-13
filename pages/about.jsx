@@ -6,134 +6,11 @@ import Link from "next/link";
 // import merchandise from "@/src/data/merchandise";
 import Merchandise from "@/src/components/Merchandise";
 
-const numbers2 = [
-  {
-    icon: "las la-gem",
-    num: "100+",
-    name: "Clients",
-    subname: "Our clients are our family",
-  },
-  {
-    icon: "las la-user-tie",
-    num: "2+",
-    name: "Professional Chefs",
-    subname: "Our chefs are the best",
-  },
-  {
-    icon: "las la-trophy",
-    num: "1+",
-    name: "Winning Awards",
-    subname: "Winning awards is our passion",
-  },
-  {
-    icon: "lar la-grin-stars",
-    num: "100+",
-    name: "5 Star Reviews",
-    subname: "Serve our customers with a smile",
-  },
-];
-
-const services2 = [
-  {
-    icon: "images/service_icon3.png",
-    name: "Coffee & Tea",
-    subname: "Hot coffee and tea",
-  },
-  {
-    icon: "images/service_icon4.png",
-    name: "Ice Coffee & Tea",
-    subname: "Cold coffee and tea",
-  },
-  {
-    icon: "images/service_icon1.png",
-    name: "Treats & Cookies",
-    subname: "Variety of treats and cookies",
-  },
-  {
-    icon: "images/service_icon2.png",
-    name: "Smoothies & Bowls",
-    subname: "Fresh smoothies and bowls",
-  },
-];
-
-const ourTeam = [
-  {
-    name: "Tricia Hax",
-    subname: "Senior Chefs",
-    image: "images/team1.jpg",
-    email: "tricia@rhodescofeeco.com",
-    phone: "315) 430-5996",
-    facebook: "https://www.facebook.com/",
-    twitter: "https://twitter.com/",
-    instagram: "https://www.instagram.com/tricia_hax/",
-  },
-  {
-    name: "Kenny V. Gonzalez",
-    subname: "Senior Chefs",
-    image: "images/team2.jpg",
-    email: "",
-    facebook: "https://www.facebook.com/",
-    twitter: "https://twitter.com/",
-    instagram: "https://www.instagram.com/",
-  },
-  {
-    name: "Joseph M. Lawrence",
-    subname: "Senior Chefs",
-    image: "images/team3.jpg",
-    email: "",
-    facebook: "https://www.facebook.com/",
-    twitter: "https://twitter.com/",
-    instagram: "https://www.instagram.com/",
-  },
-  {
-    name: "Charles K. Smith",
-    subname: "Senior Chefs",
-    image: "images/team4.jpg",
-    email: "",
-    facebook: "https://www.facebook.com/",
-    twitter: "https://twitter.com/",
-    instagram: "https://www.instagram.com/",
-  },
-];
-
-const brands = [
-  {
-    image: "images/brand1.png",
-  },
-  {
-    image: "images/brand2.png",
-  },
-  {
-    image: "images/brand3.png",
-  },
-  {
-    image: "images/brand4.png",
-  },
-  {
-    image: "images/brand5.png",
-  },
-  {
-    image: "images/brand6.png",
-  },
-];
-
-const merchandise = [
-  {
-    image: "images/merchandise1.jpg",
-    name: "RhodesCoffeeCo T-Shirt",
-    subname: "$25.00",
-  },
-  {
-    image: "images/merchandise2.jpg",
-    name: "RhodesCoffeeCo Hoodie",
-    subname: "$35.00",
-  },
-  {
-    image: "images/merchandise3.jpg",
-    name: "RhodesCoffeeCo Mug",
-    subname: "$15.00",
-  },
-];
+// import data here
+import numbers2 from "@/src/components/data/numbers";
+import services2 from "@/src/components/data/services";
+import ourTeam from "@/src/components/data/ourteam";
+import brands from "@/src/components/data/brands";
 
 const About = () => {
   return (
@@ -142,7 +19,7 @@ const About = () => {
       <section className="section kf-started-inner">
         <div
           className="kf-parallax-bg js-parallax"
-          style={{ backgroundImage: "url(images/history_inner_bg1.jpg)" }}
+          style={{ backgroundImage: "url(images/history_inner_bg1.jpeg)" }}
         />
         <div className="container">
           <h1
@@ -314,7 +191,7 @@ const About = () => {
               className="kf-title element-anim-1 scroll-animate"
               data-animate="active"
             >
-              Meet Our Professional Chefs
+              Meet Our Professional Baristas
             </h3>
           </div>
           <div className="kf-team-items row">
@@ -416,6 +293,7 @@ const About = () => {
         </div>
       </section>*/}
       {/* Section Sell Merchandise */}
+      <Merchandise />
     </Layouts>
   );
 };

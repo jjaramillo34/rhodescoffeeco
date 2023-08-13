@@ -45,7 +45,8 @@ const Merchandise = () => {
                   className="kf-title element-anim-1 scroll-animate"
                   data-animate="active"
                 >
-                  Buy RhodesCoffeeCo Merchandise
+                  Show your support & love for RhodesCoffeeCo by purchasing our
+                  branded merchandise.
                 </h3>
               </div>
             </div>
@@ -85,10 +86,23 @@ const Merchandise = () => {
             ))}
           </div>
           <hr />
+          <div className="kf-merchandise-items row">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p>
+                Disclaimer: All merchandise is made to order. Please allow 1-2
+                weeks for delivery. You will be transfer to a secure payment
+                page to complete your purchase.
+              </p>
+            </div>
+          </div>
+
+          <hr />
+
           <div className="kf-cta-btn">
             <Link href="/merchandise">
               <a className="kf-btn kf-btn-2 kf-btn-3">
-                <span>View All Merchandise</span>
+                <i className="fa fa-love" />
+                <span>Buy RhodesCoffeeCo Merchandise</span>
               </a>
             </Link>
           </div>

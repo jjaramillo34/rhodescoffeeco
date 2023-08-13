@@ -21,12 +21,46 @@ const social = [
   },
 ];
 
+const openingHours = [
+  {
+    day: "Monday",
+    time: "07:00 am - 1:00pm",
+  },
+  {
+    day: "Tuesday",
+    time: "Closed",
+  },
+  {
+    day: "Wednesday",
+    time: "Closed",
+  },
+  {
+    day: "Thursday",
+    time: "Closed",
+  },
+  {
+    day: "Friday",
+    time: "07:00 am - 1:00pm",
+  },
+  {
+    day: "Saturday",
+    time: "08:00 am - 2:00pm",
+  },
+  {
+    day: "Sunday",
+    time: "08:00 am - 2:00pm",
+  },
+];
+
 const Header = () => {
   useEffect(() => {
     stickyNav();
   }, []);
 
   const [toggle, setToggle] = useState(false);
+  const date = new Date();
+  const getTime = date.getHours();
+  const getDay = date.getDay();
 
   useEffect(() => {
     if (document.querySelector("header").className.includes("animated")) {
@@ -49,6 +83,7 @@ const Header = () => {
         <div className="row">
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
             {/* hours */}
+
             <div
               className="kf-h-group"
               style={{
@@ -56,8 +91,52 @@ const Header = () => {
                 fontSize: "1.0rem",
               }}
             >
-              <i className="far fa-clock" /> <em>opening hours :</em> 07:00 am -
-              2:00 pm
+              {openingHours.map((item) => (
+                <div key={item.id}>
+                  {item.day === "Sunday" && getDay === 0 && (
+                    <div>
+                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
+                      {item.time} <span style={{ color: "green" }}>Open</span>
+                    </div>
+                  )}
+                  {item.day === "Monday" && getDay === 1 && (
+                    <div>
+                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
+                      {item.time} <span style={{ color: "green" }}>Open</span>
+                    </div>
+                  )}
+                  {item.day === "Tuesday" && getDay === 2 && (
+                    <div>
+                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
+                      {item.time} <span style={{ color: "red" }}>Closed</span>
+                    </div>
+                  )}
+                  {item.day === "Wednesday" && getDay === 3 && (
+                    <div>
+                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
+                      {item.time} <span style={{ color: "red" }}>Closed</span>
+                    </div>
+                  )}
+                  {item.day === "Thursday" && getDay === 4 && (
+                    <div>
+                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
+                      {item.time} <span style={{ color: "red" }}>Closed</span>
+                    </div>
+                  )}
+                  {item.day === "Friday" && getDay === 5 && (
+                    <div>
+                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
+                      {item.time} <span style={{ color: "green" }}>Open</span>
+                    </div>
+                  )}
+                  {item.day === "Saturday" && getDay === 6 && (
+                    <div>
+                      <i className="far fa-clock" /> <em>opening hours :</em>{" "}
+                      {item.time} <span style={{ color: "green" }}>Open</span>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4 align-center">
@@ -159,16 +238,13 @@ const Header = () => {
                     <li>
                       <Link href="services">Service</Link>
                     </li>
-                    {/*
+                    {/* remove reservation page no need for now
                     <li>
                       <Link href="reservation">Reservation</Link>
                     </li>
                     */}
                     <li>
-                      <Link href="history">History</Link>
-                    </li>
-                    <li>
-                      <Link href="team">Our Chefs</Link>
+                      <Link href="team">Our Baristas</Link>
                     </li>
                     <li>
                       <Link href="gallery">Gallery</Link>
@@ -178,6 +254,11 @@ const Header = () => {
                     </li>
                   </ul>
                 </li>
+                {/* add history page */}
+                <li>
+                  <Link href="history">History</Link>
+                </li>
+                {/* remove blog page no need for now
                 <li>
                   <a href="#">
                     Blog
@@ -195,6 +276,7 @@ const Header = () => {
                     </li>
                   </ul>
                 </li>
+                */}
                 <li>
                   <Link href="contacts">Contacts</Link>
                 </li>
@@ -211,7 +293,7 @@ const Header = () => {
               <span />
             </a>
             {/* btn check menu*/}
-            <Link href="coffee-menu" className="kf-btn h-btn">
+            <Link href="menu-coffee" className="kf-btn h-btn">
               <span>Check Our Menu</span>
               <i className="fas fa-chevron-right" />
             </Link>
@@ -273,9 +355,12 @@ const Header = () => {
                 <li>
                   <Link href="reservation">Reservation</Link>
                 </li>
+                {/* move history to main menu
                 <li>
                   <Link href="history">History</Link>
                 </li>
+                */}
+
                 <li>
                   <Link href="team">Our Chefs</Link>
                 </li>
@@ -287,6 +372,10 @@ const Header = () => {
                 </li>
               </ul>
             </li>
+            <li>
+              <Link href="history">History</Link>
+            </li>
+            {/* remove blog links
             <li className="has-children">
               <a href="#">Blog</a>
               <i
@@ -305,6 +394,7 @@ const Header = () => {
                 </li>
               </ul>
             </li>
+            */}
             <li>
               <Link href="contacts">Contacts</Link>
             </li>

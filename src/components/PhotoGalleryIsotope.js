@@ -1,50 +1,7 @@
 import Isotope from "isotope-layout";
 import { useEffect, useRef, useState } from "react";
 
-const galleryItems = [
-  {
-    image: "images/ins_gal1.jpg",
-    name: "black coffee",
-    subname: "hot coffee",
-    filterKey: "hot-coffee",
-  },
-  {
-    image: "images/ins_gal2.jpg",
-    name: "chocolate",
-    subname: "hot chocolate",
-    filterKey: "hot-coffee",
-  },
-  {
-    image: "images/ins_gal3.jpg",
-    name: "Iced coffee",
-    subname: "refreshing drink",
-    filterKey: "cold-drink",
-  },
-  {
-    image: "images/ins_gal4.jpg",
-    name: "Hot Cappuccino",
-    subname: "Cappuccino",
-    filterKey: "hot-coffee",
-  },
-  {
-    image: "images/ins_gal5.jpg",
-    name: "Chai Latte",
-    subname: "Latte",
-    filterKey: "hot-coffee",
-  },
-  {
-    image: "images/ins_gal6.jpg",
-    name: "Smoothie",
-    subname: "refreshing drink",
-    filterKey: "smoothie",
-  },
-  {
-    image: "images/ins_gal7.jpg",
-    name: "Hot coffee",
-    subname: "hot coffee",
-    filterKey: "hot-coffee",
-  },
-];
+import galleryItems from "./data/galleryitems";
 
 const PhotoGalleryIsotope = () => {
   // Isotope
@@ -117,10 +74,10 @@ const PhotoGalleryIsotope = () => {
           </a>
           <a
             className="c-pointer"
-            onClick={handleFilterKeyChange("fast-food")}
-            data-href="fast-food"
+            onClick={handleFilterKeyChange("cold-coffee")}
+            data-href="cold-coffee"
           >
-            Fast food
+            Cold coffee
           </a>
           <a
             className="c-pointer"
@@ -131,17 +88,17 @@ const PhotoGalleryIsotope = () => {
           </a>
           <a
             className="c-pointer"
-            data-href="dinner-menu"
-            onClick={handleFilterKeyChange("dinner-menu")}
+            data-href="bowls"
+            onClick={handleFilterKeyChange("bowls")}
           >
-            Dinner menu
+            Bowls
           </a>
           <a
             className="c-pointer"
-            data-href="special-pizza"
-            onClick={handleFilterKeyChange("special-pizza")}
+            data-href="treats-eats"
+            onClick={handleFilterKeyChange("treats-eats")}
           >
-            Special pizza
+            Treats & Eats
           </a>
         </div>
         <div className="kf-gallery-items row">

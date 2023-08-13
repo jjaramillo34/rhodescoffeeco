@@ -1,7 +1,9 @@
 import Layouts from "@/src/layouts/Layouts";
-
 import dynamic from "next/dynamic";
 import Link from "next/link";
+
+import brands from "@/src/components/data/brands";
+import Merchandise from "@/src/components/Merchandise";
 
 const PhotoGalleryIsotope = dynamic(
   () => import("@/src/components/PhotoGalleryIsotope"),
@@ -17,7 +19,7 @@ const Gallery = () => {
       <section className="section kf-started-inner">
         <div
           className="kf-parallax-bg js-parallax"
-          style={{ backgroundImage: "url(images/gallery_inner_bg.jpg)" }}
+          style={{ backgroundImage: "url(images/gallery_bg.jpg)" }}
         />
         <div className="container">
           <h1
@@ -32,9 +34,9 @@ const Gallery = () => {
       {/* Section Gallery */}
       <PhotoGalleryIsotope />
       {/* Section CTA */}
-      <section
+      {/*<section
         className="section kf-cta kf-parallax"
-        style={{ backgroundImage: "url(images/cta_bg3.jpg)" }}
+        style={{ backgroundImage: "url(images/testimonials_bg_3.jpg)" }}
       >
         <div className="container">
           <div className="row">
@@ -67,73 +69,34 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+      */}
       {/* Section Brands */}
-      <div className="section kf-brands">
+      <div
+        className="section kf-brands"
+        style={{ backgroundColor: "lightgrey" }}
+      >
         <div className="container">
           <div className="kf-brands-items row">
-            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-2">
+            {brands.map((brand, index) => (
               <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
+                key={index}
+                className="col-xs-12 col-sm-12 col-md-4 col-lg-2"
               >
-                <div className="image">
-                  <img src="images/brand1.png" alt="image" />
+                <div
+                  className="kf-brands-item element-anim-1 scroll-animate"
+                  data-animate="active"
+                >
+                  <div className="image">
+                    <img src={brand.image} alt={brand.name} />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-2">
-              <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image">
-                  <img src="images/brand2.png" alt="image" />
-                </div>
-              </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-2">
-              <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image">
-                  <img src="images/brand3.png" alt="image" />
-                </div>
-              </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-2">
-              <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image">
-                  <img src="images/brand4.png" alt="image" />
-                </div>
-              </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-2">
-              <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image">
-                  <img src="images/brand5.png" alt="image" />
-                </div>
-              </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-2">
-              <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image">
-                  <img src="images/brand6.png" alt="image" />
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
+      {/* Section Merchandise */}
+      <Merchandise />
     </Layouts>
   );
 };

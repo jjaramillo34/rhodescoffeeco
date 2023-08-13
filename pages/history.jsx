@@ -1,47 +1,12 @@
+import Merchandise from "@/src/components/Merchandise";
 import Layouts from "@/src/layouts/Layouts";
 import { sliderProps } from "@/src/sliderProps";
 import Link from "next/link";
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const data = [
-  {
-    image: "images/history1.jpg",
-    subname: "Rhodes Coffee Co. was founded in Pulaski, NY",
-    name: "In the beginning, there was coffee and a dream",
-    text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
-    date: "1996",
-    label: "25 January 1996",
-    dateValue: "1996",
-  },
-  {
-    image: "images/history2.jpg",
-    subname: "We started cooking for you",
-    name: "Three Front-End Auditing Tools I Discovered Recently Useful Front-End Boilerplates",
-    text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
-    date: "1998",
-    label: "14 December 1998",
-    dateValue: "1998",
-  },
-  {
-    image: "images/history3.jpg",
-    subname: "We got a Michelin star",
-    name: "Three Front-End Auditing Tools I Discovered Recently Useful Front-End Boilerplates",
-    text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
-    date: "2004",
-    label: "10 June 2004",
-    dateValue: "2004",
-  },
-  {
-    image: "images/history4.jpg",
-    subname: "A new restaurant was opened in Paris",
-    name: "Three Front-End Auditing Tools I Discovered Recently Useful Front-End Boilerplates",
-    text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
-    date: "2008",
-    label: "15 October 2008",
-    dateValue: "2008",
-  },
-];
+import brands from "@/src/components/data/brands";
+import data from "@/src/components/data/historydata";
 
 const History = () => {
   useEffect(() => {
@@ -177,70 +142,23 @@ const History = () => {
       <div className="section kf-brands">
         <div className="container">
           <div className="kf-brands-items row">
-            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-              <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image">
-                  <img src="images/brand1.png" alt="image" />
+            {brands.map((item, index) => (
+              <div className="col-xs-12 col-sm-12 col-md-3 col-lg-2">
+                <div
+                  className="kf-brands-item element-anim-1 scroll-animate"
+                  data-animate="active"
+                >
+                  <div className="image">
+                    <img src={item.image} alt="image" />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-              <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image">
-                  <img src="images/brand2.png" alt="image" />
-                </div>
-              </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-              <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image">
-                  <img src="images/brand3.png" alt="image" />
-                </div>
-              </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-              <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image">
-                  <img src="images/brand4.png" alt="image" />
-                </div>
-              </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-              <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image">
-                  <img src="images/brand5.png" alt="image" />
-                </div>
-              </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-              <div
-                className="kf-brands-item element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <div className="image">
-                  <img src="images/brand6.png" alt="image" />
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
       {/* Section Latest Blog */}
+      {/* Remove blog section for now
       <section className="section kf-latest-blog section-bg">
         <div className="container">
           <div className="kf-titles align-center">
@@ -346,7 +264,9 @@ const History = () => {
           </div>
         </div>
       </section>
+      */}
       {/* Section CTA */}
+      {/* Remove CTA section for now
       <section
         className="section kf-cta kf-parallax"
         style={{ backgroundImage: "url(images/cta_bg.jpg)" }}
@@ -382,6 +302,9 @@ const History = () => {
           </div>
         </div>
       </section>
+      */}
+      {/* Section Merchandise */}
+      <Merchandise />
     </Layouts>
   );
 };
