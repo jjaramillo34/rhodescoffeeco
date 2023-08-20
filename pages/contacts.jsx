@@ -3,12 +3,9 @@ import Layouts from "@/src/layouts/Layouts";
 
 import React from "react";
 import { useRef } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
-
-// assign the env variables to constants
-const EMAILJS_USER_ID = process.env.EMAILJS_USER_ID;
-const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
+import ContactForm from "@/src/components/ContactForm";
 
 const address = [
   {
@@ -29,28 +26,6 @@ const address = [
 ];
 
 const Contacts = () => {
-  const form = useRef();
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        form.current,
-        EMAILJS_USER_ID
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    form.current.reset();
-  };
-
   return (
     <Layouts>
       {/* Section Started Inner */}
@@ -162,78 +137,8 @@ const Contacts = () => {
         </div>
       </section>
 
-      {/* Section Contacts Form */}
-      <section className="section kf-contacts-form">
-        <div className="container">
-          <div
-            className="kf-reservation-form element-anim-1 scroll-animate"
-            data-animate="active"
-          >
-            <div className="kf-titles align-center">
-              <div className="kf-subtitle">Contact Us</div>
-              <h3 className="kf-title">Send Us Message</h3>
-            </div>
-            <form
-              id="cform"
-              method="post"
-              className="kf-form"
-              onSubmit={sendEmail}
-              ref={form}
-            >
-              <div className="row">
-                <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <div className="kf-field">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your Name"
-                      required
-                    />
-                    <i className="fas fa-user" />
-                  </div>
-                </div>
-                <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <div className="kf-field">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your Email"
-                      required
-                    />
-                    <i className="fas fa-envelope" />
-                  </div>
-                </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <div className="kf-field">
-                    <textarea
-                      name="message"
-                      placeholder="Your Message"
-                      required
-                      defaultValue={""}
-                    />
-                    <i className="fas fa-pencil-alt" />
-                  </div>
-                </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <div className="kf-bts">
-                    <button
-                      type="submit"
-                      className="kf-btn"
-                      // on click send email
-                    >
-                      <span>Send Message</span>
-                      <i className="fas fa-chevron-right" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
-            <div className="alert-success" style={{ display: "none" }}>
-              <p>Thanks, your message is sent successfully.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Section Contact Form */}
+      <ContactForm />
 
       {/* Section Map */}
       <section className="section kf-map">

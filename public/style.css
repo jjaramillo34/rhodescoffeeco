@@ -1938,6 +1938,43 @@ button.mfp-arrow:before {
   height: 158px;
 }
 
+.kf-subscribe {
+  margin: 0 0 50px 0;
+}
+
+.kf-subscribe .form-control {
+  height: 50px;
+  border: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+.kf-subscribe .btn {
+  height: 50px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+.kf-subscribe .btn i {
+  margin-left: 10px;
+}
+
+.kf-subscribe .form-control:focus {
+  box-shadow: none;
+}
+
+.kf-subscribe .form-control::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.kf-subscribe .form-control:-moz-placeholder {
+  color: #fff;
+}
+
+.kf-subscribe .form-control::-moz-placeholder {
+  color: #fff;
+}
+
 @media screen and (max-width: 767px) {
   .section {
     padding: 70px 0;

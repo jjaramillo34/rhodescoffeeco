@@ -93,7 +93,7 @@ const OpeningStatus = () => {
         <div className="kf-h-group">
           <i className="far fa-clock" /> <em>Opening Hours :</em>
           <span>
-            We're closed now. We'll open again on {nextOpenDay.day} from{" "}
+            We're closed. We'll open again on {nextOpenDay.day} from{" "}
             {nextOpenDay.openTime} - {nextOpenDay.closeTime}
           </span>
         </div>

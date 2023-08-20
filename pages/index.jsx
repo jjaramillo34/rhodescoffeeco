@@ -1,151 +1,40 @@
+import React from "react";
 import MainSlider from "@/src/components/sliders/MainSlider";
 import TestimonialsCarousel from "@/src/components/sliders/TestimonialsCarousel";
 import Layouts from "@/src/layouts/Layouts";
 import { sliderProps } from "@/src/sliderProps";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useState } from "react";
 
 // import js component file for merchandise
 import Merchandise from "@/src/components/Merchandise";
 
 // import menu from "@/src/menu";
 import items from "@/src/components/data/menu";
+// import from pages folder api folder subscribe.js
+import SubscribePopup from "@/src/components/SubscribePopup";
 
 const slice6 = items.slice(0, 6);
 
-const itemsCarousel = [
-  {
-    image: "images/grid_gal1.jpg",
-    name: "Black Coffee",
-  },
-  {
-    image: "images/grid_gal2.jpg",
-    name: "Latte",
-  },
-  {
-    image: "images/grid_gal3.jpg",
-    name: "Cappuccino",
-  },
-  {
-    image: "images/grid_gal4.jpg",
-    name: "Iced Coffee",
-  },
-  {
-    image: "images/grid_gal5.jpg",
-    name: "Espresso",
-  },
-  {
-    image: "images/grid_gal6.jpg",
-    name: "Mocha",
-  },
-  {
-    image: "images/grid_gal7.jpg",
-    name: "Macchiato",
-  },
-  {
-    image: "images/grid_gal8.jpg",
-    name: "Americano",
-  },
-  {
-    image: "images/grid_gal9.jpg",
-    name: "Flat White",
-  },
-  {
-    image: "images/grid_gal10.jpg",
-    name: "Affogato",
-  },
-];
-
-const reviews = [
-  {
-    image: "images/review1.jpg",
-    name: "Lily Johnson",
-    review:
-      "RhodesCoffee Co. is a delightful journey of flavors. Their organic brews and small-batch creations are pure magic, transporting me to unexpected coffee havens!",
-  },
-  {
-    name: "Michael Smith",
-    review:
-      "Sip, savor, and smile - that's what RhodesCoffee Co. is all about! Their dedication to positive change reflects in every cup. Truly an exceptional coffee experience!",
-  },
-  {
-    name: "Sophia Williams",
-    review:
-      "I'm in love with RhodesCoffee Co.'s commitment to authenticity and nature. Their mobile coffee brings the taste of home wherever I go. A must-try for all coffee enthusiasts!",
-  },
-  {
-    name: "Ethan Brown",
-    review:
-      "RhodesCoffee Co. takes me on a coffee adventure every time. The thoughtfully sourced ingredients and affordable prices make it an absolute favorite. A top-notch mobile coffee spot!",
-  },
-  {
-    name: "Olivia Jones",
-    review:
-      "Roaming for change and savoring every sip! RhodesCoffee Co.'s artisanal blends are a breath of fresh air, a true catalyst for positive vibes. Can't get enough of their magic!",
-  },
-];
-
-const numbers = [
-  {
-    number: "100+",
-    name: "Clients",
-    subname: "Rooted in authenticity, brewed for change",
-  },
-  {
-    number: "50+",
-    name: "First Time Clients",
-    subname: "Scents of the world in a cup",
-  },
-  {
-    number: "50+",
-    name: "Occasional Clients",
-    subname: "A delightful journey of flavors",
-  },
-];
-
-const services = [
-  {
-    image: "images/service1.jpg",
-    name: "Coffee",
-    icon: "las la-utensils",
-    link: "menu-coffee",
-  },
-  {
-    image: "images/service2.jpg",
-    name: "Smoothies",
-    icon: "las la-coffee",
-    link: "menu-coffee",
-  },
-  {
-    image: "images/service3.jpg",
-    name: "Bowls",
-    icon: "las la-glass-cheers",
-    link: "menu-coffee",
-  },
-  {
-    image: "images/service4.jpg",
-    name: "Tea",
-    icon: "las la-lemon",
-    link: "menu-coffee",
-  },
-  {
-    image: "images/service5.jpg",
-    name: "Cookies",
-    icon: "las la-cookie-bite",
-    link: "menu-coffee",
-  },
-  {
-    image: "images/service6.jpg",
-    name: "Juice",
-    icon: "las la-glass-whiskey",
-    link: "menu-coffee",
-  },
-];
+// import data for itemscarousel
+import itemsCarousel from "@/src/components/data/itemscarousel";
+import reviews from "@/src/components/data/reviews";
+import numbers from "@/src/components/data/clients";
+import services from "@/src/components/data/services1";
 
 const Index = () => {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 5000);
+  }, []);
+
   return (
     <Layouts>
       {/* Section Started Slider */}
+      <SubscribePopup isOpen={show} onClose={() => setShow(false)} />
       <MainSlider />
       {/* Section About */}
       <section className="section kf-about section-bg">
@@ -674,7 +563,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Section Gallery */}
       {/*<section className="section kf-gallery">
         <div className="container">

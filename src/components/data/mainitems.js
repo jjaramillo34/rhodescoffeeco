@@ -1,0 +1,60 @@
+const items = [
+  {
+    image: "images/started_img_n1.jpeg",
+    title1: "Fueling your day,",
+    title2: "on the go!",
+    subtitle: "From roads to flavors - taste the essence of Rhodes.",
+    link1: "menu-coffee",
+    link2: "reservation",
+  },
+  {
+    image: "images/started_img_n2.jpeg",
+    title1: "Brewing happiness,",
+    title2: "on cup at a time!",
+    subtitle: "Adventure in every cup - embrace the unexpected with us!",
+    link1: "menu-coffee",
+    link2: "reservation",
+  },
+  {
+    image: "images/started_img_n3.jpeg",
+    title1: "Coffee with soul,",
+    title2: "straight from the road!",
+    subtitle: "Where nature blends with coffee - journey with Rhodes!",
+    link1: "menu-coffee",
+    link2: "reservation",
+  },
+  {
+    image: "images/started_img_n4.jpeg",
+    title1: "Artisanal blends, ",
+    title2: "handcrafted with love!",
+    subtitle: "Small-batch wonders, big smiles - Rhodes Coffee Co. delivers!",
+    link1: "menu-coffee",
+    link2: "reservation",
+  },
+  {
+    image: "images/started_img_n5.jpeg",
+    title1: "Coffee with a cause,",
+    title2: "for a better tomorrow!",
+    subtitle: "Sip with purpose - join us in our mission!",
+    link1: "menu-coffee",
+    link2: "reservation",
+  },
+  {
+    image: "images/started_img_n6.jpeg",
+    title1: "Coffee with a cause,",
+    title2: "for a better tomorrow!",
+    subtitle: "Sip with purpose - join us in our mission!",
+    link1: "menu-coffee",
+    link2: "reservation",
+  },
+  {
+    image: "images/started_img_n7.jpeg",
+    title1: "Coffee with a cause,",
+    title2: "for a better tomorrow!",
+    subtitle: "Sip with purpose - join us in our mission!",
+    link1: "menu-coffee",
+    link2: "reservation",
+  },
+];
+
+export default items;
