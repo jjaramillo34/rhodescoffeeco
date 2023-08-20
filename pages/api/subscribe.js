@@ -3,7 +3,7 @@ import twilio from "twilio";
 
 export default async (req, res) => {
   const connectionString = process.env.MONGODB_URI;
-  const client = await MongoClient.connect(connectionString, {
+  const client = new MongoClient(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
