@@ -1,30 +1,3 @@
-const gallery = [
-  {
-    id: 1,
-    image: "images/grid_gal1.jpg",
-  },
-  {
-    id: 2,
-    image: "images/grid_gal2.jpg",
-  },
-  {
-    id: 3,
-    image: "images/grid_gal3.jpg",
-  },
-  {
-    id: 4,
-    image: "images/grid_gal4.jpg",
-  },
-  {
-    id: 5,
-    image: "images/grid_gal5.jpg",
-  },
-  {
-    id: 6,
-    image: "images/grid_gal6.jpg",
-  },
-];
-
 const hours = [
   {
     id: 1,
@@ -63,6 +36,12 @@ const location = [
     icon: "las la-phone",
   },
 ];
+
+import gallery from "../components/data/itemscarousel";
+import OpeningHours from "./OpeningHours";
+
+// slice gallery array to only show 8 images
+const slicedGallery = gallery.slice(0, 9);
 
 const Footer = () => {
   return (
@@ -170,7 +149,7 @@ const Footer = () => {
             >
               <h5>Gallery</h5>
               <ul>
-                {gallery.map((item) => (
+                {slicedGallery.map((item) => (
                   <li key={item.id}>
                     <a
                       href={item.image}
@@ -184,6 +163,18 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="row">
+          <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-center">
+            {/* OpeningHours Component */}
+            <div
+              className="kf-opening-hours element-anim-1 scroll-animate"
+              data-animate="active"
+            >
+              <OpeningHours />
+            </div>
+          </div>
+        </div>
+
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-center">
             {/* copyright */}
