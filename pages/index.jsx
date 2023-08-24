@@ -6,6 +6,8 @@ import { sliderProps } from "@/src/sliderProps";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState } from "react";
+// next image
+import Image from "next/image";
 
 // import js component file for merchandise
 import Merchandise from "@/src/components/Merchandise";
@@ -22,8 +24,6 @@ import itemsCarousel from "@/src/components/data/itemscarousel";
 import reviews from "@/src/components/data/reviews";
 import numbers from "@/src/components/data/clients";
 import services from "@/src/components/data/services1";
-
-import Image from "next/image";
 
 const Index = () => {
   const [show, setShow] = useState(false);
@@ -84,7 +84,12 @@ const Index = () => {
                 className="kf-about-quote element-anim-1 scroll-animate"
                 data-animate="active"
               >
-                <img src="images/quote_img1.jpg" alt="image" />
+                <Image
+                  src="/images/quote_img1.jpg"
+                  alt="image"
+                  width={125}
+                  height={100}
+                />
                 <div>
                   Rooted in authenticity, brewed for change - Rhodes Coffee Co.
                   embraces life's unexpected roads.
@@ -96,7 +101,12 @@ const Index = () => {
                 className="kf-about-image element-anim-1 scroll-animate"
                 data-animate="active"
               >
-                <img src="images/about_img1.jpeg" alt="image" />
+                <Image
+                  src="/images/about_img1.jpeg"
+                  alt="image"
+                  width={461}
+                  height={600}
+                />
               </div>
             </div>
           </div>
@@ -117,7 +127,7 @@ const Index = () => {
                 >
                   <div className="image kf-image-hover">
                     <Link href={item.link}>
-                      <img src={item.image} alt="image" />
+                      <Image src={item.image} alt="image" />
                     </Link>
                   </div>
                   <div className="desc">

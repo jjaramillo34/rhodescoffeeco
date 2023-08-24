@@ -163,7 +163,7 @@ export default function SubscribePopup() {
             }}
           >
             <Image
-              src="/images/rcc_logo.png"
+              src="/images/logo.png"
               alt="Rhodes Coffee Co Logo"
               sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px"
             />
