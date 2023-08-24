@@ -40,6 +40,8 @@ const location = [
 import gallery from "../components/data/itemscarousel";
 import OpeningHours from "./OpeningHours";
 
+import Image from "next/image";
+
 // slice gallery array to only show 8 images
 const slicedGallery = gallery.slice(0, 9);
 
@@ -55,14 +57,12 @@ const Footer = () => {
               data-animate="active"
             >
               <a href="/">
-                <img
-                  src="images/logo_footer.png"
-                  alt="image"
-                  style={{
-                    height: "300px",
-                    maxHeight: "400px",
-                    maxWidth: "400px",
-                  }}
+                <Image
+                  src="/images/logo_footer.png"
+                  alt="Rhodes Coffee Co Logo"
+                  width={400}
+                  height={300}
+                  max-height="400px"
                 />
               </a>
             </div>
