@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import items from "@/src/components/data/mainitems";
 
+import Image from "next/image";
+
 const MainSlider = () => {
   return (
     <section className="section kf-started-slider">
@@ -13,8 +15,16 @@ const MainSlider = () => {
             <div className="kf-started-item">
               <div
                 className="slide js-parallax"
-                style={{ backgroundImage: `url(${item.image})` }}
+                style={{
+                  backgroundImage: `url(${item.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  height: "100vh",
+                  width: "100%",
+                }}
               />
+
               <div className="container">
                 <div className="description align-left">
                   <div className="subtitles">{item.subtitle}</div>

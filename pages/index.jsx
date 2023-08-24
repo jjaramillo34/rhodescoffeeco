@@ -328,7 +328,6 @@ const Index = () => {
                 >
                   <div className="image kf-image-hover">
                     <a href={item.image} className="has-popup-image">
-                      <img src={item.image} alt="image" />
                       <Image
                         src={item.image}
                         alt="image"
