@@ -23,6 +23,8 @@ import reviews from "@/src/components/data/reviews";
 import numbers from "@/src/components/data/clients";
 import services from "@/src/components/data/services1";
 
+import Image from "next/image";
+
 const Index = () => {
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -309,7 +311,7 @@ const Index = () => {
                   data-animate="active"
                 >
                   <div className="image kf-image-hover">
-                    <a href="images/grid_gal1.jpg" className="has-popup-image">
+                    <a href={item.image} className="has-popup-image">
                       <img src={item.image} alt="image" />
                     </a>
                   </div>
@@ -517,7 +519,12 @@ const Index = () => {
                 data-animate="active"
               >
                 <div className="kf-subscribe-image">
-                  <img src="images/subscribe_img1.jpg" alt="image" />
+                  <Image
+                    src="/images/subscribe_img1.jpg"
+                    alt="image"
+                    width={570}
+                    height={570}
+                  />
                 </div>
               </div>
             </div>

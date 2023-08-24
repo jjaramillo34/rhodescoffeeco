@@ -10,16 +10,123 @@ const social = [
     link: "facebook.com",
   },
   {
-    icon: "fab fa-twitter",
-    link: "twitter.com",
-  },
-  {
     icon: "fab fa-instagram",
     link: "instagram.com",
   },
+];
+
+const menu = [
   {
-    icon: "fab fa-youtube",
-    link: "youtube.com",
+    title: "Home",
+    link: "/",
+    submenu: [
+      {
+        title: "Coffee House",
+        link: "/",
+      },
+    ],
+  },
+  {
+    title: "About",
+    link: "about",
+    submenu: [
+      {
+        title: "AboutUs",
+        link: "about",
+      },
+    ],
+  },
+  {
+    title: "Menu",
+    link: "menu-coffee",
+    submenu: [
+      {
+        title: "Menu Coffee",
+        link: "menu-coffee",
+      },
+    ],
+  },
+  //{
+  //  title: "Shop",
+  //  link: "shop",
+  //  submenu: [
+  //    {
+  //      title: "Shop",
+  //      link: "shop",
+  //    },
+  //  ],
+  //},
+  {
+    title: "Services",
+    link: "services",
+    submenu: [
+      {
+        title: "Catering",
+        link: "catering",
+      },
+      {
+        title: "Merchandise",
+        link: "shop",
+      },
+      {
+        title: "Gallery",
+        link: "gallery",
+      },
+      {
+        title: "FAQ",
+        link: "faq",
+      },
+    ],
+  },
+  //{
+  //  title: "Catering",
+  //  link: "catering",
+  //  submenu: [
+  //    {
+  //      title: "Catering",
+  //      link: "catering",
+  //    },
+  //  ],
+  //},
+  //{
+  //  title: "Gallery",
+  //  link: "gallery",
+  //  submenu: [
+  //    {
+  //      title: "Our Gallery",
+  //      link: "gallery",
+  //    },
+  //  ],
+  //},
+  //{
+  //  title: "FAQ",
+  //  link: "faq",
+  //  submenu: [
+  //    {
+  //      title: "FAQ",
+  //      link: "faq",
+  //    },
+  //  ],
+  //},
+  {
+    title: "History",
+    link: "history",
+    submenu: [
+      {
+        title: "Our History",
+        link: "history",
+      },
+    ],
+  },
+  {
+    title: "Contact",
+    link: "contacts",
+    submenu: [
+      {
+        title: "Contact Us",
+        link: "contacts",
+      },
+    ],
   },
 ];
 
@@ -115,85 +222,24 @@ const Header = () => {
             {/* main menu */}
             <div className="kf-main-menu">
               <ul>
-                <li>
-                  <Link href="/">
-                    Home
-                    <i className="las la-angle-down" />
-                  </Link>
-                  <ul>
-                    <li>
-                      <Link href="/">Coffee House</Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link href="about">About</Link>
-                </li>
-                <li>
-                  <Link href="menu-coffee">
-                    Menu
-                    <i className="las la-angle-down" />
-                  </Link>
-                  <ul>
-                    <li>
-                      <Link href="menu-coffee">Menu Coffee</Link>
-                    </li>
-                    {/*<li>
-                      <Link href="menu-restaurant">Menu Restaurant</Link>
-                    </li>*/}
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">
-                    Pages
-                    <i className="las la-angle-down" />
-                  </a>
-                  <ul>
-                    <li>
-                      <Link href="services">Service</Link>
-                    </li>
-                    {/* remove reservation page no need for now
-                    <li>
-                      <Link href="reservation">Reservation</Link>
-                    </li>
-                    */}
-                    <li>
-                      <Link href="team">Our Baristas</Link>
-                    </li>
-                    <li>
-                      <Link href="gallery">Gallery</Link>
-                    </li>
-                    <li>
-                      <Link href="faq">FAQ</Link>
-                    </li>
-                  </ul>
-                </li>
-                {/* add history page */}
-                <li>
-                  <Link href="history">History</Link>
-                </li>
-                {/* remove blog page no need for now
-                <li>
-                  <a href="#">
-                    Blog
-                    <i className="las la-angle-down" />
-                  </a>
-                  <ul>
-                    <li>
-                      <Link href="blog-grid">Blog Grid</Link>
-                    </li>
-                    <li>
-                      <Link href="blog">Blog Standard</Link>
-                    </li>
-                    <li>
-                      <Link href="blog-single">Blog Single</Link>
-                    </li>
-                  </ul>
-                </li>
-                */}
-                <li>
-                  <Link href="contacts">Contacts</Link>
-                </li>
+                {menu.map((item) => (
+                  <li>
+                    <Link href={item.link}>
+                      {item.title}
+                      <i
+                        className="las la-angle-down"
+                        onClick={() => activeMenuSet(item.title)}
+                      />
+                    </Link>
+                    <ul style={activeLi(item.title)}>
+                      {item.submenu.map((subitem) => (
+                        <li>
+                          <Link href={subitem.link}>{subitem.title}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -219,99 +265,24 @@ const Header = () => {
         {/* mobile menu */}
         <div className="kf-main-menu">
           <ul>
-            <li className="has-children">
-              <Link href="/">Home</Link>
-              <i
-                className="las la-angle-down"
-                onClick={() => activeMenuSet("home")}
-              />
-              <ul style={activeLi("home")}>
-                <li>
-                  <Link href="/">Coffee House</Link>
-                </li>
-                {/*
-                <li>
-                  <Link href="index-2">Restaurant</Link>
-                </li>
-                */}
-              </ul>
-            </li>
-            <li>
-              <Link href="about">About</Link>
-            </li>
-            <li className="has-children">
-              <Link href="menu-coffee">Menu</Link>
-              <i
-                className="las la-angle-down"
-                onClick={() => activeMenuSet("Menu")}
-              />
-              <ul style={activeLi("Menu")}>
-                <li>
-                  <Link href="menu-coffee">Menu Coffee</Link>
-                </li>
-                {/*
-                <li>
-                  <Link href="menu-restaurant">Menu Restaurant</Link>
-                </li>
-                */}
-              </ul>
-            </li>
-            <li className="has-children">
-              <a href="#">Pages</a>
-              <i
-                className="las la-angle-down"
-                onClick={() => activeMenuSet("Pages")}
-              />
-              <ul style={activeLi("Pages")}>
-                <li>
-                  <Link href="services">Service</Link>
-                </li>
-                <li>
-                  <Link href="reservation">Reservation</Link>
-                </li>
-                {/* move history to main menu
-                <li>
-                  <Link href="history">History</Link>
-                </li>
-                */}
-
-                <li>
-                  <Link href="team">Our Chefs</Link>
-                </li>
-                <li>
-                  <Link href="gallery">Gallery</Link>
-                </li>
-                <li>
-                  <Link href="faq">FAQ</Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link href="history">History</Link>
-            </li>
-            {/* remove blog links
-            <li className="has-children">
-              <a href="#">Blog</a>
-              <i
-                className="las la-angle-down"
-                onClick={() => activeMenuSet("Blog")}
-              />
-              <ul style={activeLi("Blog")}>
-                <li>
-                  <Link href="blog-grid">Blog Grid</Link>
-                </li>
-                <li>
-                  <Link href="blog">Blog Standard</Link>
-                </li>
-                <li>
-                  <Link href="blog-single">Blog Single</Link>
-                </li>
-              </ul>
-            </li>
-            */}
-            <li>
-              <Link href="contacts">Contacts</Link>
-            </li>
+            {menu.map((item) => (
+              <li>
+                <Link href={item.link}>
+                  {item.title}
+                  <i
+                    className="las la-angle-down"
+                    onClick={() => activeMenuSet(item.title)}
+                  />
+                </Link>
+                <ul style={activeLi(item.title)}>
+                  {item.submenu.map((subitem) => (
+                    <li>
+                      <Link href={subitem.link}>{subitem.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
           </ul>
         </div>
         {/* mobile topline */}
@@ -319,27 +290,20 @@ const Header = () => {
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               {/* mobile btn */}
-              <Link href="reservation" className="kf-btn h-btn">
-                <span>Book a table</span>
+              <Link href="menu-coffee" className="kf-btn h-btn">
+                <span>Check Our Menu</span>
                 <i className="fas fa-chevron-right" />
               </Link>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               {/* social */}
-              <div className="kf-h-social">
-                <a href="facebook.com" target="blank">
-                  <i className="fab fa-facebook-f" />
-                </a>
-                <a href="twitter.com" target="blank">
-                  <i className="fab fa-twitter" />
-                </a>
-                <a href="instagram.com" target="blank">
-                  <i className="fab fa-instagram" />
-                </a>
-                <a href="youtube.com" target="blank">
-                  <i className="fab fa-youtube" />
-                </a>
-              </div>
+              {social.map((item) => (
+                <div className="kf-h-social">
+                  <a href={item.link} target="blank">
+                    <i className={item.icon} />
+                  </a>
+                </div>
+              ))}
             </div>
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               {/* hours */}
@@ -351,10 +315,14 @@ const Header = () => {
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               {/* location */}
               <div className="kf-h-group">
-                <i className="fas fa-map-marker-alt" /> <em>Location :</em> 55
-                main street, new york
+                <i className="fas fa-map-marker-alt" /> <em>Location :</em>
+                <a href="https://www.google.com/maps/place/4759+salina+st/@43.5618154,-76.1265864,3a,75y,274.81h,90t/data=!3m4!1e1!3m2!1svLdUR0GdnQKxLDjN84jStQ!2e0!4m2!3m1!1s0x89d83526100e6093:0xf7d45bb50875d655?sa=X&ved=2ahUKEwi63bzH0PWAAxV-F1kFHe-KAGcQxB16BAgdEAA">
+                  4759 Salina Street
+                </a>
               </div>
             </div>
+            <hr />
+            <CheckOpeningHours />
           </div>
         </div>
       </div>

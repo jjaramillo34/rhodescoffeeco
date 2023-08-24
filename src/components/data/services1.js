@@ -18,21 +18,9 @@ const services = [
     link: "menu-coffee",
   },
   {
-    image: "images/service4.jpg",
-    name: "Tea",
-    icon: "las la-lemon",
-    link: "menu-coffee",
-  },
-  {
     image: "images/service5.jpg",
-    name: "Cookies",
+    name: "Sneaks & Treats",
     icon: "las la-cookie-bite",
-    link: "menu-coffee",
-  },
-  {
-    image: "images/service6.jpg",
-    name: "Juice",
-    icon: "las la-glass-whiskey",
     link: "menu-coffee",
   },
 ];

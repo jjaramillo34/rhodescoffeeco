@@ -1,3 +1,5 @@
+import React from "react";
+import { useState, useEffect } from "react";
 import { sliderProps } from "@/src/sliderProps";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -47,7 +49,13 @@ const TestimonialsCarousel = () => {
                         <i className="fas fa-star" />
                         <i className="fas fa-star" />
                       </div>
-                      <div className="text">{item.review}</div>
+                      <div className="text">
+                        {item.review.length > 150 ? (
+                          <p>{item.review.slice(0, 150)}...</p>
+                        ) : (
+                          <p>{item.review}</p>
+                        )}
+                      </div>
                       <h5 className="name">
                         {item.name} <em>{item.type}</em>
                       </h5>

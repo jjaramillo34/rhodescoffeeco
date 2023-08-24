@@ -163,6 +163,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <hr />
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-center">
             {/* OpeningHours Component */}
@@ -174,7 +175,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-center">
             {/* copyright */}

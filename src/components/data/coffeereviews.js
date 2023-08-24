@@ -1,73 +1,73 @@
 const coffeeReviews = [
   {
-    name: "Alex Johnson",
-    image: "https://fakeimg.pl/100/",
+    name: "Elizabeth VanSlyke",
+    image: "/images/reviews_icon.png",
     type: "Regular Customer",
     review:
-      "Rhodes Coffee Co. is my go-to place! Their organic coffee is pure bliss, and I love the variety of artisanal products. It feels like a warm hug every time I visit!",
+      "Fantastic coffee and food! I wasn't sure what to  order and was recommended to try a special decaf espresso as I wanted decaf! What a wonderful and delicious recommendation I was given!  Very friendly service as well. I highly recommend checking it out! You won’t be disappointed.",
   },
   {
-    name: "Emma Williams",
-    image: "https://fakeimg.pl/100/",
+    name: "Kimberly Wormworth",
+    image: "/images/reviews_icon.png",
     type: "First-Time Customer",
     review:
-      "I stumbled upon Rhodes Coffee Co. during a road trip, and it was a delightful surprise! Their small-batch brews are unmatched, and I couldn't resist taking some home.",
+      "Best cup of coffee I’ve had in a long time! Super friendly staff, and such a cool vibe. Very clean. Couldn’t recommend this place enough!",
   },
   {
-    name: "Michael Smith",
-    image: "https://fakeimg.pl/100/",
+    name: "Brittney Rogers",
+    image: "/images/reviews_icon.png",
     type: "Regular Customer",
     review:
-      "As a coffee enthusiast, I appreciate the dedication Rhodes Coffee Co. has for sourcing quality beans. It's evident in every sip, and it's a positive change I'm proud to support!",
+      "The dirty chai and açaí bowls were amazing. Service was wonderful! Looking forward to grabbing snacks and drinks",
   },
   {
-    name: "Sophia Martinez",
-    image: "https://fakeimg.pl/100/",
+    name: "Will Willbur",
+    image: "/images/reviews_icon.png",
     type: "Occasional Customer",
     review:
-      "Rhodes Coffee Co. offers a unique experience. I love their commitment to nature and sustainability. Their baristas are friendly, and the coffee is exceptional!",
+      "The coffee was great but the service and atmosphere even better. Great place to get your morning started on the weekends. My new favorite coffee spot.",
   },
   {
-    name: "William Brown",
-    image: "https://fakeimg.pl/100/",
+    name: "Cody Katie Snyder",
+    image: "/images/reviews_icon.png",
     type: "Regular Customer",
     review:
-      "From the first sip, I knew Rhodes Coffee Co. was special. It's more than just coffee; it's a journey of flavors that sparks positivity. Highly recommended!",
+      "We were so excited to find this on vacation in Pulaski. Wonderful coffee, espressos, smoothies & more. The aesthetic is beautiful. Would definitely recommend",
   },
   {
-    name: "Olivia Davis",
-    image: "https://fakeimg.pl/100/",
+    name: "Cindy Pauldine",
+    image: "/images/reviews_icon.png",
     type: "First-Time Customer",
     review:
-      "Rhodes Coffee Co. stands out with its commitment to organic goodness. I tried their signature blend, and it exceeded my expectations! Can't wait to visit again.",
+      "What a terrific traveling coffee shop! Our Americano and mocha latte were perfect. Their smoothie selection is inventive and they’re delicious! ",
   },
   {
-    name: "Ethan Miller",
-    image: "https://fakeimg.pl/100/",
+    name: "Alexander Allport",
+    image: "/images/reviews_icon.png",
     type: "Regular Customer",
     review:
-      "The vibe at Rhodes Coffee Co. is unmatched - cozy and welcoming. Their coffee is divine, and I'm thrilled to be part of their positive change mission!",
+      "I visited Rhodes Coffee and ordered the Boulder Smoothie and Peanut Butter Açaí Bowl. They were delicious and the service was great. The owner is focused on quality of the food and making customers happy. I was pleased with everything and am so glad there is a new healthy food/coffee shop in Pulaski.",
   },
   {
-    name: "Ava Wilson",
-    image: "https://fakeimg.pl/100/",
+    name: "Jaclyn Smith",
+    image: "/images/reviews_icon.png",
     type: "Occasional Customer",
     review:
-      "I had a fantastic experience at Rhodes Coffee Co. during a friend's recommendation. The organic options and friendly staff made it a memorable coffee stop.",
+      "The best coffee and smoothie bowls, with fast and friendly service! A must try!",
   },
   {
-    name: "Liam Taylor",
-    image: "https://fakeimg.pl/100/",
+    name: "Kennedy Killough",
+    image: "/images/reviews_icon.png",
     type: "First-Time Customer",
     review:
-      "Rhodes Coffee Co. is a gem! Their mobile setup is impressive, and the coffee quality matches. An authentic coffee experience that's worth every penny!",
+      "Love this place coffee is amazing and the owner is very nice and welcoming",
   },
   {
-    name: "Mia Anderson",
-    image: "https://fakeimg.pl/100/",
+    name: "Gretchen Digby",
+    image: "/images/reviews_icon.png",
     type: "Regular Customer",
     review:
-      "Rhodes Coffee Co. has stolen my heart. Their dedication to being eco-friendly is commendable. Their coffee is a reminder to appreciate life's simple joys!",
+      "Such a fun new experience for our area! Wishing you all the very best of luck with this adventure!",
   },
 ];
 
