@@ -236,7 +236,13 @@ const Index = () => {
                 className="kf-choose-image element-anim-1 scroll-animate"
                 data-animate="active"
               >
-                <img src="images/choose_img1.jpg" alt="image" />
+                <Image
+                  src="/images/choose_img1.jpg"
+                  alt="image"
+                  width={500}
+                  height={700}
+                  sizes="{(max-width: 767px) 500px, (max-width: 991px) 500px, 700px}"
+                />
               </div>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-5 offset-lg-1 align-self-center">
@@ -323,6 +329,13 @@ const Index = () => {
                   <div className="image kf-image-hover">
                     <a href={item.image} className="has-popup-image">
                       <img src={item.image} alt="image" />
+                      <Image
+                        src={item.image}
+                        alt="image"
+                        width={667}
+                        height={1000}
+                        sizes="{(max-width: 767px) 667px, (max-width: 991px) 667px, 1000px}"
+                      />
                     </a>
                   </div>
                   <div className="desc">
@@ -533,7 +546,8 @@ const Index = () => {
                     src="/images/subscribe_img1.jpg"
                     alt="image"
                     width={570}
-                    height={570}
+                    height={400}
+                    sizes="{(max-width: 767px) 570px, (max-width: 991px) 570px, 400px}"
                   />
                 </div>
               </div>
