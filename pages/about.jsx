@@ -14,7 +14,6 @@ import brands from "@/src/components/data/brands";
 
 // next/image
 import Image from "next/image";
-import { I } from "@/sanity/dist/static/sanity-2dc20630";
 
 const About = () => {
   return (
@@ -229,7 +228,6 @@ const About = () => {
                     <div className="subname">{item.subname}</div>
                   </div>
                   <div className="image kf-image-hover">
-                    <img src={item.image} alt="image" />
                     <Image
                       src={item.image}
                       alt="image"
