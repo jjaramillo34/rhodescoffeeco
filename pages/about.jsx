@@ -12,6 +12,10 @@ import services2 from "@/src/components/data/services";
 import ourTeam from "@/src/components/data/ourteam";
 import brands from "@/src/components/data/brands";
 
+// next/image
+import Image from "next/image";
+import { I } from "@/sanity/dist/static/sanity-2dc20630";
+
 const About = () => {
   return (
     <Layouts>
@@ -68,7 +72,11 @@ const About = () => {
                     data-animate="active"
                   >
                     <div className="icon">
-                      <img src="images/choose_icon1.png" alt="image" />
+                      <Image
+                        src="/images/choose_icon1.png"
+                        alt="image"
+                        sizes="100%"
+                      />
                     </div>
                     <div className="desc">
                       <h5 className="name">100% Organic Coffee</h5>
@@ -83,7 +91,11 @@ const About = () => {
                     data-animate="active"
                   >
                     <div className="icon">
-                      <img src="images/choose_icon2.png" alt="image" />
+                      <Image
+                        src="/images/choose_icon2.png"
+                        alt="image"
+                        sizes="100%"
+                      />
                     </div>
                     <div className="desc">
                       <h5 className="name">Fresh &amp; Healthy Foods</h5>
@@ -109,7 +121,11 @@ const About = () => {
                 className="kf-choose-image element-anim-1 scroll-animate"
                 data-animate="active"
               >
-                <img src="images/about_img2.jpg" alt="image" />
+                <Image
+                  src="/images/about2.jpg"
+                  alt="image"
+                  sizes="(max-width: 479px) 100vw, (max-width: 767px) 100vw, (max-width: 991px) 100vw, 100vw, (max-width: 1199px) 100vw, 100vw"
+                />
               </div>
             </div>
           </div>
@@ -165,7 +181,11 @@ const About = () => {
                   data-animate="active"
                 >
                   <div className="image">
-                    <img src={item.icon} alt="image" />
+                    <Image
+                      src={item.image}
+                      alt="services image"
+                      sizes="(max-width: 479px) 100vw, (max-width: 767px) 100vw, (max-width: 991px) 100vw, 100vw, (max-width: 1199px) 100vw, 100vw"
+                    />
                   </div>
                   <div className="desc">
                     <h5 className="name">{item.name}</h5>
@@ -210,6 +230,11 @@ const About = () => {
                   </div>
                   <div className="image kf-image-hover">
                     <img src={item.image} alt="image" />
+                    <Image
+                      src={item.image}
+                      alt="image"
+                      sizes="(max-width: 479px) 100vw, (max-width: 767px) 100vw, (max-width: 991px) 100vw, 100vw, (max-width: 1199px) 100vw, 100vw"
+                    />
                     <div className="info">
                       <div className="label">{item.email}</div>
                       <div className="label">{item.phone}</div>
@@ -246,7 +271,11 @@ const About = () => {
                   data-animate="active"
                 >
                   <div className="image">
-                    <img src={item.image} alt="image" />
+                    <Image
+                      src={item.image}
+                      alt="image"
+                      sizes="(max-width: 479px) 100vw, (max-width: 767px) 100vw, (max-width: 991px) 100vw, 100vw, (max-width: 1199px) 100vw, 100vw"
+                    />
                   </div>
                 </div>
               </div>

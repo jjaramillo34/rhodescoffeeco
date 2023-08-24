@@ -13,6 +13,7 @@ import PhoneInput from "react-phone-number-input";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 
+import Image from "next/image";
 export default function SubscribePopup() {
   const customStyles = {
     content: {
@@ -161,15 +162,10 @@ export default function SubscribePopup() {
               color: "#000",
             }}
           >
-            <img
-              src="/images/logo.png"
-              alt="subscribe dialog picture"
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
+            <Image
+              src="/images/rcc_logo.png"
+              alt="Rhodes Coffee Co Logo"
+              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px"
             />
           </div>
           <DialogTitle
