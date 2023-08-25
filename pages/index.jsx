@@ -170,10 +170,14 @@ const Index = () => {
               RhodesCoffee Popular Coffee Menu
             </h3>
           </div>
-          <div
-            className="kf-menu-items"
-            style={{ backgroundImage: "url(images/menu_logo.png)" }}
-          >
+          <div className="kf-menu-items" style={{ backgroundColor: "#b1b1b1" }}>
+            <Image
+              src="/images/menu_logo.png"
+              alt="image"
+              width={300}
+              height={300}
+            />
+
             <div className="row">
               {slice6.map((item, index) => (
                 <div

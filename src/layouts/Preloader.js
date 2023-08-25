@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const Preloader = () => {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 1500);
+    }, 5000);
   }, []);
 
   return (
@@ -16,15 +17,13 @@ const Preloader = () => {
       >
         <div className="vertical-center">
           <div className="spinner-logo">
-            <img
-              src="images/sunlogo.png"
-              alt="logo"
-              style={{
-                width: "200px",
-                maxHeight: "200px",
-              }}
+            <Image
+              src="/images/logo.png"
+              alt="Rhodes Coffee Co Logo"
+              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px"
             />
-            <h5>welcome to rhodescoffeeco</h5>
+
+            <h5>loading... </h5>
             <div className="spinner-dot">
               <div className="spinner-line" />
             </div>

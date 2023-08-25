@@ -1223,7 +1223,7 @@ button.mfp-close:before {
 .kf-logo img {
   max-width: 100%;
   width: auto;
-  max-height: 40px;
+  max-height: 300px;
 }
 
 .kf-search {

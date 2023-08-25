@@ -60,9 +60,7 @@ const Footer = () => {
                 <Image
                   src="/images/logo_footer.png"
                   alt="Rhodes Coffee Co Logo"
-                  width={400}
-                  height={300}
-                  max-height="400px"
+                  sizes="(max-width: 768px) 600px, 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </a>
             </div>
