@@ -18,9 +18,16 @@ const Preloader = () => {
         <div className="vertical-center">
           <div className="spinner-logo">
             <Image
-              src="/images/logo.png"
+              src="/images/sunlogo.png"
               alt="Rhodes Coffee Co Logo"
-              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px"
+              sizes="(max-width: 768px) 600px, 100vw, (max-width: 1200px) 50vw, 33vw"
+              quality={100}
+              className="centrize full-width"
+              style={{
+                width: "250px",
+                maxHeight: "300px",
+                maxWidth: "500px",
+              }}
             />
 
             <h5>loading... </h5>

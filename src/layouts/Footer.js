@@ -61,6 +61,13 @@ const Footer = () => {
                   src="/images/logo_footer.png"
                   alt="Rhodes Coffee Co Logo"
                   sizes="(max-width: 768px) 600px, 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={100}
+                  className="img-fluid"
+                  style={{
+                    width: "250px",
+                    maxHeight: "300px",
+                    maxWidth: "500px",
+                  }}
                 />
               </a>
             </div>
