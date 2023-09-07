@@ -1,43 +1,53 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const Preloader = () => {
-  const [loaded, setLoaded] = useState(false);
+const Preloader = ({ onComplete }) => {
+  const [isLoaded, setLoaded] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  // count up to 100%
+  const countUp = () => {
+    if (progress < 100) {
+      setProgress(progress + 1);
+    }
+  };
+
   useEffect(() => {
     setTimeout(() => {
-      setLoaded(true);
-    }, 5000);
+      setLoaded(false);
+
+      onComplete();
+    }, 50000);
   }, []);
 
-  return (
-    <div className={`preloader ${loaded ? "loaded" : ""}`}>
+  // if (!isLoaded) return null;
+
+  return isLoaded ? (
+    <div className={`preloader ${isLoaded ? "loaded" : ""}`}>
       <div
         className="centrize full-width"
-        style={{ display: loaded ? "none" : "table" }}
+        style={{ display: isLoaded ? "none" : "table" }}
       >
         <div className="vertical-center">
           <div className="spinner-logo">
-            <Image
-              src="/images/sunlogo.png"
-              alt="Rhodes Coffee Co Logo"
-              sizes="(max-width: 768px) 600px, 100vw, (max-width: 1200px) 50vw, 33vw"
-              quality={100}
-              className="centrize full-width"
-              style={{
-                width: "250px",
-                maxHeight: "300px",
-                maxWidth: "500px",
-              }}
-            />
-
-            <h5>loading... </h5>
+            <img src="images/logo.png" alt="image" />
             <div className="spinner-dot">
               <div className="spinner-line" />
+            </div>
+            <div
+              className="spinner-text"
+              style={{ display: progress === 100 ? "none" : "block" }}
+            >
+              Loading...
+            </div>
+            <div className="spinner-progress" style={{ width: `${progress}%` }}>
+              {progress}%
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };
+
 export default Preloader;

@@ -2,7 +2,7 @@ import Preloader from "@/src/layouts/Preloader";
 import "@/styles/globals.css";
 // add vercel analytics
 import { Analytics } from "@vercel/analytics/react";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import dynamic from "next/dynamic";
 
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
@@ -10,9 +10,10 @@ const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
 });
 
 const App = ({ Component, pageProps }) => {
+  const [isLoaded, setLoaded] = useState(false);
   return (
     <Fragment>
-      <Preloader />
+      <Preloader onComplete={() => setLoaded(true)} />
       <Component {...pageProps} />
       <AnimatedCursor
         innerSize={10}

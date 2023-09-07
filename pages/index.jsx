@@ -148,6 +148,14 @@ const Index = () => {
         style={{ backgroundImage: "url(images/category_bg.jpg)" }}
       >
         <div className="container">
+          <div className="kf-parallax-icon pi-1" data-jarallax-element={-60}>
+            <div
+              className="p-icon"
+              style={{
+                backgroundImage: "url(images/menu_icon.png)",
+              }}
+            />
+          </div>
           <div className="kf-titles align-center">
             <div
               className="kf-subtitle element-anim-1 scroll-animate"
@@ -170,14 +178,14 @@ const Index = () => {
               RhodesCoffee Popular Coffee Menu
             </h3>
           </div>
-          <div className="kf-menu-items" style={{ backgroundColor: "#b1b1b1" }}>
-            <Image
-              src="/images/menu_logo.png"
-              alt="image"
-              width={300}
-              height={300}
+          <div className="kf-menu-items" style={{ backgroundColor: "#C4A484" }}>
+            <img
+              style={{
+                width: "100%",
+                height: "auto",
+                backgroundImage: "url(images/menu_logo.png)",
+              }}
             />
-
             <div className="row">
               {slice6.map((item, index) => (
                 <div
@@ -195,9 +203,27 @@ const Index = () => {
                     </div>
                     <div className="desc">
                       <h5 className="name">{item.name}</h5>
-                      <div className="subname">{item.subname}</div>
-                      <div className="size">{item.size}</div>
-                      <div className="price">{item.price}</div>
+                      <div
+                        className="subname"
+                        style={{
+                          color: "#fff",
+                          fontSize: "0.75rem",
+                          fontFamily: "sans-serif",
+                        }}
+                      >
+                        {item.subname}
+                      </div>
+                      <div
+                        className="price"
+                        style={{
+                          color: "#fff",
+                          fontWeight: "bold",
+                          fontSize: "1.0rem",
+                          fontFamily: "sans-serif",
+                        }}
+                      >
+                        {item.price}
+                      </div>
                     </div>
                   </div>
                 </div>
