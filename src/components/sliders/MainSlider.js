@@ -6,6 +6,12 @@ import items from "@/src/components/data/mainitems";
 
 import Image from "next/image";
 
+import img1 from "@/public/images/started_img_n1.webp";
+import img2 from "@/public/images/started_img_n2.webp";
+import img3 from "@/public/images/started_img_n3.webp";
+import img4 from "@/public/images/started_img_n4.webp";
+import img5 from "@/public/images/started_img_n5.webp";
+
 const MainSlider = () => {
   return (
     <section className="section kf-started-slider">
@@ -16,14 +22,58 @@ const MainSlider = () => {
               <div
                 className="slide js-parallax"
                 style={{
-                  backgroundImage: `url(${item.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
+                  position: "relative",
                   height: "100vh",
                   width: "100%",
                 }}
-              />
+              >
+                {/* Using Next.js Image component with priority for lazy loading */}
+                {index === 0 && (
+                  <Image
+                    src={img1}
+                    alt="image"
+                    layout="fill"
+                    objectFit="cover"
+                    priority={true}
+                  />
+                )}
+                {index === 1 && (
+                  <Image
+                    src={img2}
+                    alt="image"
+                    layout="fill"
+                    objectFit="cover"
+                    priority={true}
+                  />
+                )}
+                {index === 2 && (
+                  <Image
+                    src={img3}
+                    alt="image"
+                    layout="fill"
+                    objectFit="cover"
+                    priority={true}
+                  />
+                )}
+                {index === 3 && (
+                  <Image
+                    src={img4}
+                    alt="image"
+                    layout="fill"
+                    objectFit="cover"
+                    priority={true}
+                  />
+                )}
+                {index === 4 && (
+                  <Image
+                    src={img5}
+                    alt="image"
+                    layout="fill"
+                    objectFit="cover"
+                    priority={true}
+                  />
+                )}
+              </div>
 
               <div className="container">
                 <div className="description align-left">
@@ -60,32 +110,5 @@ const MainSlider = () => {
     </section>
   );
 };
-export default MainSlider;
 
-//<SwiperSlide className="swiper-slide">
-//  <div className="kf-started-item">
-//    <div
-//      className="slide js-parallax"
-//      style={{ backgroundImage: "url(images/started_img_n3.jpg)" }}
-//    />
-//    <div className="container">
-//      <div className="description align-left">
-//        <div className="subtitles">Welcome to the rhodescoffee</div>
-//        <h2 className="name text-anim-1" data-splitting="chars">
-//          Great Coffee <br />
-//          Good Vibes
-//        </h2>
-//        <div className="kf-bts">
-//          <Link href="menu-coffee" className="kf-btn">
-//            <span>explore more</span>
-//            <i className="fas fa-chevron-right" />
-//          </Link>
-//          <Link href="reservation" className="kf-btn dark-btn">
-//            <span>get delivery</span>
-//            <i className="fas fa-chevron-right" />
-//          </Link>
-//        </div>
-//      </div>
-//    </div>
-//  </div>
-//</SwiperSlide>;
+export default MainSlider;
