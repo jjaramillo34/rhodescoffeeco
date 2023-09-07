@@ -20,7 +20,13 @@ const Preloader = ({ onComplete }) => {
     }, 50000);
   }, []);
 
-  // if (!isLoaded) return null;
+  useEffect(() => {
+    if (progress < 100) {
+      setTimeout(() => {
+        countUp();
+      }, 50);
+    }
+  }, [progress]);
 
   return isLoaded ? (
     <div className={`preloader ${isLoaded ? "loaded" : ""}`}>
