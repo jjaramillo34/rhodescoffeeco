@@ -1,21 +1,28 @@
+import img1 from "@/public/images/brand1.png";
+import img2 from "@/public/images/brand2.png";
+import img3 from "@/public/images/brand3.png";
+import img4 from "@/public/images/brand4.png";
+import img5 from "@/public/images/brand5.png";
+import img6 from "@/public/images/brand6.png";
+
 const brands = [
   {
-    image: "images/brand1.png",
+    image: img1,
   },
   {
-    image: "images/brand2.png",
+    image: img2,
   },
   {
-    image: "images/brand3.png",
+    image: img3,
   },
   {
-    image: "images/brand4.png",
+    image: img4,
   },
   {
-    image: "images/brand5.png",
+    image: img5,
   },
   {
-    image: "images/brand6.png",
+    image: img6,
   },
 ];
 

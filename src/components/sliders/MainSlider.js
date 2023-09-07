@@ -28,51 +28,13 @@ const MainSlider = () => {
                 }}
               >
                 {/* Using Next.js Image component with priority for lazy loading */}
-                {index === 0 && (
-                  <Image
-                    src={img1}
-                    alt="image"
-                    layout="fill"
-                    objectFit="cover"
-                    priority={true}
-                  />
-                )}
-                {index === 1 && (
-                  <Image
-                    src={img2}
-                    alt="image"
-                    layout="fill"
-                    objectFit="cover"
-                    priority={true}
-                  />
-                )}
-                {index === 2 && (
-                  <Image
-                    src={img3}
-                    alt="image"
-                    layout="fill"
-                    objectFit="cover"
-                    priority={true}
-                  />
-                )}
-                {index === 3 && (
-                  <Image
-                    src={img4}
-                    alt="image"
-                    layout="fill"
-                    objectFit="cover"
-                    priority={true}
-                  />
-                )}
-                {index === 4 && (
-                  <Image
-                    src={img5}
-                    alt="image"
-                    layout="fill"
-                    objectFit="cover"
-                    priority={true}
-                  />
-                )}
+                <Image
+                  src={item.image}
+                  alt="image"
+                  layout="fill"
+                  objectFit="cover"
+                  priority={true}
+                />
               </div>
 
               <div className="container">

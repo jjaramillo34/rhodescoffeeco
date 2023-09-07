@@ -1,6 +1,11 @@
+import img1 from "@/public/images/history1.jpg";
+import img2 from "@/public/images/history2.jpg";
+import img3 from "@/public/images/history3.jpg";
+import img4 from "@/public/images/history4.jpg";
+
 const data = [
   {
-    image: "images/history1.jpg",
+    image: img1,
     subname: "Rhodes Coffee Co. was founded in Pulaski, NY",
     name: "In the beginning, there was coffee and a dream",
     text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
@@ -9,7 +14,7 @@ const data = [
     dateValue: "1996",
   },
   {
-    image: "images/history2.jpg",
+    image: img2,
     subname: "We started cooking for you",
     name: "Three Front-End Auditing Tools I Discovered Recently Useful Front-End Boilerplates",
     text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
@@ -18,7 +23,7 @@ const data = [
     dateValue: "1998",
   },
   {
-    image: "images/history3.jpg",
+    image: img3,
     subname: "We got a Michelin star",
     name: "Three Front-End Auditing Tools I Discovered Recently Useful Front-End Boilerplates",
     text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
@@ -27,7 +32,7 @@ const data = [
     dateValue: "2004",
   },
   {
-    image: "images/history4.jpg",
+    image: img4,
     subname: "A new restaurant was opened in Paris",
     name: "Three Front-End Auditing Tools I Discovered Recently Useful Front-End Boilerplates",
     text: "Sorem ipsum dolor sit am consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendi sultrices gravida. Risus commodo viverra maecenas cumsan lacus vel facilisis.",
