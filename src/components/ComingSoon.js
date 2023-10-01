@@ -1,33 +1,32 @@
 import React from "react";
 import Countdown from "react-countdown";
-import Image from "next/image";
+import { motion } from "framer-motion";
+// import coming soon css from public folder
+import "@/public/comingsoon.css";
+function App() {
+  const targetDate = new Date("2023-12-31T00:00:00").getTime(); // Replace with your target date
 
-//import "./ComingSoonPage.css";
-
-const ComingSoonPage = () => {
-  // Set your target date for the countdown
-  const targetDate = new Date("2023-12-31T00:00:00");
-
-  // Renderer function for the Countdown component
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
-      // Render a message when the countdown is complete
-      return <div className="countdown">We're live now!</div>;
+      return <div>Launch day!</div>;
     } else {
-      // Render the countdown timer
       return (
         <div className="countdown">
           <div className="countdown-item">
-            <span className="countdown-number">{days}</span> Days
+            <span className="countdown-number">{days}</span>
+            <span className="countdown-label">Days</span>
           </div>
           <div className="countdown-item">
-            <span className="countdown-number">{hours}</span> Hours
+            <span className="countdown-number">{hours}</span>
+            <span className="countdown-label">Hours</span>
           </div>
           <div className="countdown-item">
-            <span className="countdown-number">{minutes}</span> Minutes
+            <span className="countdown-number">{minutes}</span>
+            <span className="countdown-label">Minutes</span>
           </div>
           <div className="countdown-item">
-            <span className="countdown-number">{seconds}</span> Seconds
+            <span className="countdown-number">{seconds}</span>
+            <span className="countdown-label">Seconds</span>
           </div>
         </div>
       );
@@ -35,20 +34,48 @@ const ComingSoonPage = () => {
   };
 
   return (
-    // add here logo and other stuff
+    <div className="App">
+      <header className="App-header">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+        >
+          <img
+            src="images/logo.png"
+            alt="Rhodes Coffee Co Logo"
+            className="logo"
+          />
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className="title"
+        >
+          Rhodes Coffee Co
+        </motion.h1>
+        <br />
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className="subtitle"
+        >
+          Coming Soon
+        </motion.p>
+        <br />
 
-    <div className="coming-soon">
-      <Image
-        src="/images/logo.png"
-        alt="Rhodes Coffee Co. Logo"
-        width={500}
-        height={500}
-      />
-      <h1>Welcome to Rhodes Coffee Co.</h1>
-      <p>Our website is under construction. Stay tuned!</p>
-      <Countdown date={targetDate} renderer={renderer} />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+        >
+          <Countdown date={targetDate} renderer={renderer} />
+        </motion.div>
+      </header>
     </div>
   );
-};
+}
 
-export default ComingSoonPage;
+export default App;
