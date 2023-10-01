@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { sliderProps } from "@/src/sliderProps";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
 
 import coffeeReviews from "@/src/components/data/coffeereviews";
 
@@ -39,7 +40,13 @@ const TestimonialsCarousel = () => {
                     data-animate="active"
                   >
                     <div className="image">
-                      <img src={item.image} alt="image" />
+                      <Image
+                        src={item.image}
+                        alt="image"
+                        layout="fill"
+                        objectFit="cover"
+                        priority={true}
+                      />
                     </div>
                     <div className="desc">
                       <div className="stars">

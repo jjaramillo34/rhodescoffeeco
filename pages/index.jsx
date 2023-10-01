@@ -19,11 +19,13 @@ import SubscribePopup from "@/src/components/SubscribePopup";
 
 const slice6 = items.slice(0, 6);
 
-// import data for itemscarousel
+// import data
 import itemsCarousel from "@/src/components/data/itemscarousel";
 import reviews from "@/src/components/data/reviews";
 import numbers from "@/src/components/data/clients";
 import services from "@/src/components/data/services1";
+
+import About from "@/src/components/sections/About";
 
 const Index = () => {
   const [show, setShow] = useState(false);
@@ -33,85 +35,17 @@ const Index = () => {
     }, 5000);
   }, []);
 
+  const imageLoaderGrid = ({ src, width, quality }) => {
+    return `https://localhost:3000/${src}?w=${width}&q=${quality || 75}`;
+  };
+
   return (
     <Layouts>
       {/* Section Started Slider */}
       <SubscribePopup isOpen={show} onClose={() => setShow(false)} />
       <MainSlider />
       {/* Section About */}
-      <section className="section kf-about section-bg">
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-5">
-              <div className="kf-titles">
-                <div
-                  className="kf-subtitle element-anim-1 scroll-animate"
-                  data-animate="active"
-                  style={{
-                    color: "#fff",
-                    textShadow: "0 0 10px rgba(0,0,0,0.5)",
-                    textTransform: "uppercase",
-                    fontWeight: "bold",
-                    fontSize: "2.5rem",
-                  }}
-                >
-                  About Us
-                </div>
-                <h3
-                  className="kf-title element-anim-1 scroll-animate"
-                  data-animate="active"
-                >
-                  Organic &amp; Fresh Coffee <br />
-                  at Rhodes Coffee Co.
-                </h3>
-              </div>
-              <div
-                className="kf-text element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <p>
-                  "Inspired by the road [Rhode] - the unexpected places life
-                  takes us, the people we meet, and ultimately - the place we
-                  call home - Rhodes Coffee Co. is an homage to our roots.
-                  Rooted in the belief that life is best lived authentically and
-                  organically - and as close to nature as possible. Rhodes
-                  Coffee Co. strives to be a catalyst for positive change with
-                  thoughtfully sourced organic coffee & ingredients + small
-                  batch, artisanal products at an affordable price."
-                </p>
-              </div>
-              <div
-                className="kf-about-quote element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <Image
-                  src="/images/quote_img1.jpg"
-                  alt="image"
-                  width={125}
-                  height={100}
-                />
-                <div>
-                  Rooted in authenticity, brewed for change - Rhodes Coffee Co.
-                  embraces life's unexpected roads.
-                </div>
-              </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7">
-              <div
-                className="kf-about-image element-anim-1 scroll-animate"
-                data-animate="active"
-              >
-                <Image
-                  src="/images/about_img1.jpeg"
-                  alt="image"
-                  width={461}
-                  height={600}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <About />
       {/* Section Services */}
       <section className="section kf-services section-bg">
         <div className="container">
@@ -357,13 +291,13 @@ const Index = () => {
                   data-animate="active"
                 >
                   <div className="image kf-image-hover">
-                    <a href={item.image} className="has-popup-image">
+                    <a href={imageLoaderGrid} className="has-popup-image">
                       <Image
+                        loader={imageLoaderGrid}
                         src={item.image}
                         alt="image"
-                        width={667}
-                        height={1000}
-                        sizes="{(max-width: 767px) 667px, (max-width: 991px) 667px, 1000px}"
+                        width={570}
+                        height={400}
                       />
                     </a>
                   </div>
@@ -376,6 +310,7 @@ const Index = () => {
           </Swiper>
         </div>
       </section>
+
       {/* end Section Grid Carousel */}
       {/* Section Testimonials Carousel */}
       <TestimonialsCarousel />

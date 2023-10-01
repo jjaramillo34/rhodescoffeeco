@@ -3,14 +3,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import items from "@/src/components/data/mainitems";
-
 import Image from "next/image";
-
-import img1 from "@/public/images/started_img_n1.webp";
-import img2 from "@/public/images/started_img_n2.webp";
-import img3 from "@/public/images/started_img_n3.webp";
-import img4 from "@/public/images/started_img_n4.webp";
-import img5 from "@/public/images/started_img_n5.webp";
 
 const MainSlider = () => {
   return (

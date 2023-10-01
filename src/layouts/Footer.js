@@ -22,18 +22,21 @@ const location = [
     name: "Location: ",
     description: "4759 Salina Street",
     icon: "las la-map-marker",
+    linktoFollow: "https://goo.gl/maps/6Z1Z9Z6Z9Z6Z9Z6Z9",
   },
   {
     id: 2,
     name: "Email Address: ",
     description: "contact@rhodescoffeeco.com",
     icon: "las la-envelope-open-text",
+    linktoFollow: "mailto:contact@rhodescoffeco.com ",
   },
   {
     id: 3,
     name: "Phone Number: ",
     description: "(315) 430-5996",
     icon: "las la-phone",
+    linktoFollow: "tel:315-430-5996",
   },
 ];
 
@@ -44,6 +47,8 @@ import Image from "next/image";
 
 // slice gallery array to only show 8 images
 const slicedGallery = gallery.slice(0, 9);
+
+import footerImage from "@/public/images/logo_footer.png";
 
 const Footer = () => {
   return (
@@ -58,15 +63,14 @@ const Footer = () => {
             >
               <a href="/">
                 <Image
-                  src="/images/logo_footer.png"
+                  src={footerImage}
                   alt="Rhodes Coffee Co Logo"
                   sizes="(max-width: 768px) 600px, 100vw, (max-width: 1200px) 50vw, 33vw"
                   quality={100}
                   className="img-fluid"
                   style={{
-                    width: "250px",
-                    maxHeight: "300px",
-                    maxWidth: "500px",
+                    width: "300px",
+                    height: "200px",
                   }}
                 />
               </a>
@@ -140,7 +144,16 @@ const Footer = () => {
                     >
                       {item.name}
                     </em>
-                    {item.description}
+                    <a
+                      href={item.linktoFollow}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: "black",
+                      }}
+                    >
+                      {item.description}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -156,12 +169,17 @@ const Footer = () => {
               <ul>
                 {slicedGallery.map((item) => (
                   <li key={item.id}>
-                    <a
-                      href={item.image}
-                      className="kf-image-hover has-popup-image"
-                    >
-                      <img src={item.image} alt="image" />
-                    </a>
+                    <Image
+                      src={item.image}
+                      alt="Rhodes Coffee Co Gallery Image"
+                      sizes="(max-width: 768px) 600px, 100vw, (max-width: 1200px) 50vw, 33vw"
+                      quality={100}
+                      className="img-fluid"
+                      style={{
+                        width: "100px",
+                        height: "100px",
+                      }}
+                    />
                   </li>
                 ))}
               </ul>
