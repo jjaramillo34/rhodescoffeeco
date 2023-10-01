@@ -2,7 +2,7 @@ import React from "react";
 import Countdown from "react-countdown";
 import { motion } from "framer-motion";
 // import coming soon css from public folder
-import "@/public/comingsoon.css";
+//import "@/public/comingsoon.css";
 function App() {
   const targetDate = new Date("2023-12-31T00:00:00").getTime(); // Replace with your target date
 
